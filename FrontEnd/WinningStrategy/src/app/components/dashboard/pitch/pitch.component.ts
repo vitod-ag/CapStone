@@ -119,11 +119,10 @@ export class PitchComponent {
     }
 
     resetPositions() {
-        this.onModuleChange({ target: { value: '4-3-3' } }); // Reset al modulo di default 4-3-3
+        this.onModuleChange({ target: { value: '4-3-3' } }); 
     }
 
     save() {
-        // Implementa la logica di salvataggio
         console.log('Salvato!');
     }
 }
