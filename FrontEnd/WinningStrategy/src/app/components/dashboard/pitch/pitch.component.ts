@@ -125,4 +125,6 @@ export class PitchComponent {
     save() {
         console.log('Salvato!');
     }
+    
 }
+

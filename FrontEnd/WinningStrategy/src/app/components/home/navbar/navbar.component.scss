@@ -1,0 +1,44 @@
+.navbar {
+    background-color: #14213D !important;
+    border-bottom: 1px solid white; 
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .navbar-brand {
+    font-family: "Monoton", sans-serif;
+    color: #FFFFFF; 
+    padding-left: 1rem; 
+    margin-right: 2rem; 
+  }
+  
+  .navbar-nav .nav-link {
+    color: #FFFFFF; 
+    padding-left: 1rem; 
+    padding-right: 1rem; 
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: FCA311; 
+  }
+  
+  .navbar-nav .dropdown-menu {
+    background-color: #14213D; 
+  }
+  
+  .navbar-nav .dropdown-item {
+    color: #FFFFFF; 
+  }
+  
+  .navbar-nav .dropdown-item:hover {
+    color: FCA311; 
+  }
+  
+  .bordoarancione {
+    border-bottom: 1px solid orange;
+  }
+  
+  a:hover {
+    color: FCA311;
+  }
+  
