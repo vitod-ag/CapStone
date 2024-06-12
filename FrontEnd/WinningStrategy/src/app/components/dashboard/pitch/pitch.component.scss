@@ -15,8 +15,8 @@
 .player {
   position: absolute;
   text-align: center;
-  border-radius: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 50%;
 }
 
 .player-circle {
@@ -100,3 +100,42 @@ button.btn {
   transition-duration: 0.3s;
 }
 
+@media (max-width: 1200px) {
+  .pitch-container {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 992px) {
+  .pitch-container {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pitch-container {
+    max-width: 500px;
+  }
+
+  .player-circle {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 576px) {
+  .pitch-container {
+    max-width: 400px;
+  }
+
+  .player-circle {
+    width: 30px;
+    height: 30px;
+    font-size: 0.7em;
+  }
+
+  .form-select, .btn {
+    width: 100%;
+  }
+}

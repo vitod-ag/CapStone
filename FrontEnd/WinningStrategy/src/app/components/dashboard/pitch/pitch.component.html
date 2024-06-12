@@ -1,9 +1,9 @@
 <div class="container-fluid text-center my-5">
   <div class="row justify-content-center">
-    <div class="col-lg-6 col-md-8 col-sm-10 col-12">
+    <div class="col-lg-8 col-md-10 col-sm-12">
       <div class="pitch-container mx-auto" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
         <img src="assets/base_lavagna.png" alt="Campo da calcio" class="pitch">
-        <div class="player" *ngFor="let player of players" [ngStyle]="{'top.px': player.y, 'left.px': player.x, 'background-color': selectedColor}"
+        <div class="player" *ngFor="let player of players" [ngStyle]="{'top.%': player.y, 'left.%': player.x, 'background-color': selectedColor}"
              draggable="true" (dragstart)="onDragStart($event, player)">
           <div class="player-circle">{{ player.name }}</div>
         </div>
