@@ -8,7 +8,7 @@
           <div class="player-circle">{{ player.name }}</div>
         </div>
       </div>
-      <div class="d-flex flex-wrap justify-content-between align-items-center mt-4 mx-auto">
+      <div class="config-section d-flex flex-wrap justify-content-between align-items-center mt-4 mx-auto">
         <div class="mb-2">
           <label for="colorSelect" class="form-label">Scegli il colore:</label>&nbsp;
           <select id="colorSelect" class="form-select" [(ngModel)]="selectedColor">
@@ -26,8 +26,10 @@
             <option value="5-4-1">5-4-1&nbsp; (Difensivo)</option>
           </select>
         </div>
+      </div>
+      <div class="button-section mt-4 d-flex justify-content-center">
         <div class="mb-2">
-          <button class="btn btn-danger" (click)="save()"><i class="bi bi-save"></i>&nbsp; Salva</button>
+          <button class="btn btn-warning mx-2 btn-sm" (click)="resetPositions()"><i class="bi bi-arrow-counterclockwise"></i>&nbsp; Reset</button>
         </div>
       </div>
       <div class="mt-4">
@@ -39,8 +41,10 @@
           <label for="tacticalNotes" class="form-label">Note tattiche:</label>
           <textarea id="tacticalNotes" class="form-control" [(ngModel)]="tacticalNotes"></textarea>
         </div>
-        <div>
-          <button class="btn btn-warning" (click)="resetPositions()"><i class="bi bi-arrow-counterclockwise"></i>&nbsp; Reset</button>
+        <div class="button-section mt-4 d-flex justify-content-center">
+          <div class="mb-2">
+            <button class="btn btn-danger mx-2 btn-sm" (click)="save()"><i class="bi bi-save"></i>&nbsp; Save &nbsp; project</button>
+          </div>
         </div>
       </div>
     </div>
