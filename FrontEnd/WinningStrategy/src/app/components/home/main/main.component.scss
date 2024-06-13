@@ -1,0 +1,156 @@
+.main-content {
+  padding: 2rem 1rem;
+  background-color: #E5E5E5;
+
+  .about-section {
+    h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+
+      .highlight {
+        color: #FCA311;
+        font-weight: bold;
+      }
+    }
+
+    p {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+
+      .highlight {
+        color: #FCA311;
+        font-weight: bold;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+    }
+
+    @media (max-width: 576px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.875rem;
+        line-height: 1.4;
+      }
+    }
+  }
+
+  .section-dark, .section-light {
+    padding: 2rem 1rem;
+    text-align: center;
+
+    .container {
+      display: flex;
+      align-items: center;
+    }
+
+    .row {
+      width: 100%;
+    }
+
+    .image-container {
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        border-radius: 15px;
+      }
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+
+      .highlight {
+        color: #FCA311;
+        font-weight: bold;
+      }
+    }
+
+    p {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+
+      .highlight {
+        color: #FCA311;
+        font-weight: bold;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+    }
+
+    @media (max-width: 576px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.875rem;
+        line-height: 1.4;
+      }
+    }
+  }
+
+  .section-dark {
+    background-color: #14213d;
+    color: #FFFF;
+  }
+
+  .section-light {
+    background-color: #FFFF;
+    color: #14213d;
+  }
+
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+  }
+
+  .animate-img {
+    transform: rotate(-10deg);
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+      transform: rotate(0deg) scale(1.05);
+    }
+  }
+
+  .animate-coach {
+    transform: scale(0.7);
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+      transform: scale(1.0);
+    }
+  }
+}

@@ -1,22 +1,30 @@
 .navbar {
     background-color: #14213d !important;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #FFFF;
     position: sticky;
     top: 0;
     z-index: 1030;
     padding-left: 2rem;
     padding-right: 2rem;
+
+    .navbar-toggler {
+        border-color: #FFFF;
+    }
+    
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
 }
 
 .navbar-brand {
     font-family: "Monoton", sans-serif;
-    color: #ffffff;
+    color: #FFFF;
     padding-left: 1rem;
     margin-right: 2rem;
 }
 
 .navbar-nav .nav-link {
-    color: #ffffff;
+    color: #FFFF;
     padding-left: 1rem;
     padding-right: 1rem;
 }
@@ -25,12 +33,17 @@
     color: #FCA311;
 }
 
+.navbar-nav .dropdown {
+    background-color: transparent !important;
+}
+
 .navbar-nav .dropdown-menu {
     background-color: #14213d;
+    right: 0 !important; /* Ensure the dropdown is aligned to the right */
 }
 
 .navbar-nav .dropdown-item {
-    color: #ffffff;
+    color: #FFFF;
 }
 
 .navbar-nav .dropdown-item:hover {
@@ -43,4 +56,66 @@
 
 a:hover {
     color: #FCA311;
+}
+
+
+@media (max-width: 820px) {
+  .navbar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+
+  .navbar-nav .nav-link {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .navbar-nav .nav-link {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .navbar-nav .dropdown-menu {
+    right: 0 !important;
+    left: auto !important;
+  }
+}
+
+@media (max-width: 392px) {
+  .navbar {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    height: 60px; 
+  }
+
+  .navbar-brand {
+    font-size: 0.875rem;
+  }
+
+  .navbar-nav .nav-link {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .navbar-nav .dropdown-menu {
+    font-size: 0.75rem;
+    right: 0 !important; 
+    left: auto !important; 
+  }
 }

@@ -1,0 +1,113 @@
+.jumbotron {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #FFF;
+
+  &-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  &-content {
+    position: relative;
+    z-index: 2;
+    max-width: 90%;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: left;
+
+    @media (max-width: 576px) {
+      padding: 1rem;
+    }
+  }
+
+  h1 {
+    font-weight: 800;
+    font-size: 3rem;
+
+    @media (max-width: 1200px) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: 992px) {
+      font-size: 2.2rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+    font-style: italic;
+
+    @media (max-width: 1200px) {
+      font-size: 1.15rem;
+    }
+
+    @media (max-width: 992px) {
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  .explore-btn {
+    background-color: #FCA311;
+    border: none;
+    border-radius: 15px;
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken(#FCA311, 10%);
+    }
+
+    @media (max-width: 576px) {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    height: 90vh;
+  }
+
+  @media (max-width: 1199px) and (min-width: 992px) {
+    height: 70vh;
+  }
+
+  @media (max-width: 991px) and (min-width: 768px) {
+    height: 60vh;
+  }
+
+  @media (max-width: 767px) {
+    height: 50vh;
+  }
+}

@@ -10,7 +10,7 @@ import { FooterComponent } from './components/home/footer/footer.component';
 import { PitchComponent } from './components/dashboard/pitch/pitch.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ProjectsComponent } from './projects/projects.component';
+import { MainComponent } from './components/home/main/main.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { ProjectsComponent } from './projects/projects.component';
     PitchComponent,
     HomeComponent,
     DashboardComponent,
-    ProjectsComponent
+    MainComponent
   ],
   imports: [
     BrowserModule,
