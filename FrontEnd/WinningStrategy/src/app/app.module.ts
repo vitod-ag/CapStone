@@ -11,6 +11,7 @@ import { PitchComponent } from './components/pitch/pitch.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MainComponent } from './components/home/main/main.component';
+import { Error404Component } from './components/error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MainComponent } from './components/home/main/main.component';
     PitchComponent,
     HomeComponent,
     DashboardComponent,
-    MainComponent
+    MainComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,

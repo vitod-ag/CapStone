@@ -1,0 +1,54 @@
+.error-404-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    max-width: 100%;
+    background-color: #14213d;
+    color: #FFF;
+    padding: 20px;
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #fca311;
+    }
+
+    p {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn {
+        background-color: #fca311;
+        color: #14213d;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #e09e05;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .error-404-container h1 {
+        font-size: 2rem;
+    }
+
+    .error-404-container p {
+        font-size: 1rem;
+    }
+}
