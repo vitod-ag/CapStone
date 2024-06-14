@@ -16,7 +16,7 @@ footer {
 
   .footer-middle {
     padding-top: 2em;
-    color: white;
+    color: #FFFF;
   }
 
   .footer-pad h4 {
@@ -43,7 +43,7 @@ footer {
       display: inline-block;
 
       a {
-        background: #fca311;
+        background: #FFFF;
         border-radius: 50%;
         color: #14213d;
         display: inline-block;
@@ -52,14 +52,15 @@ footer {
         line-height: 40px;
         text-align: center;
         transition: background-color 0.3s, color 0.3s;
+        padding: 0;
 
         &:hover {
-          background: #14213d;
-          color: #fca311;
+          background: #fca311;
+          color: #14213d;
         }
 
         i {
-          font-size: 1.2em;
+          font-size: 1.6em;
         }
       }
     }
@@ -69,7 +70,7 @@ footer {
     font-size: 14.5px;
     padding: 10px;
     font-weight: bold;
-    border-top: 1px solid #ffffff;
+    border-top: 1px solid #FFFF;
     margin-top: 20px;
   }
 
