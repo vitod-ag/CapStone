@@ -49,6 +49,7 @@ body {
 button.btn {
   display: inline-block;
   margin-left: 20px;
+  background-color: #E09E05;
 }
 
 .btn-sm {
@@ -142,14 +143,6 @@ select, textarea, input{
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.11);
 }
 
-.reset-btn {
-  background-color: #FCA311;
-}
-
-.reset-btn:hover {
-  background-color: #E09E05;
-}
-
 .Btn:hover {
   background-color: #E09E05;
   transition-duration: 0.3s;
@@ -200,8 +193,6 @@ select, textarea, input{
   width: 10px;
   height: 10px;
   background-color: rgb(12, 12, 12);
-  background-size: 1000%;
-  background-position: center;
   transform: rotate(45deg);
   left: -5%;
   transition-duration: 0.3s;
@@ -212,58 +203,58 @@ select, textarea, input{
   transition-duration: 0.3s;
 }
 
-@keyframes slide-in-top {
-  0% {
-    transform: translateY(-10px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
+.Btn.saved {
+  background-color: #28a745 !important; /* Green background */
+}
+
+.Btn.saved .tooltip {
+  background-color: #28a745 !important; /* Green background */
+  color: #fff !important; /* White text */
+}
+
+.Btn.saved .tooltip::before {
+  background-color: #28a745 !important; /* Green background */
 }
 
 /* Responsive styles */
 @media (max-width: 820px) {
   .config-section {
-    flex-direction: column;
-    align-items: flex-start;
+      flex-direction: column;
+      align-items: flex-start;
   }
 
   .config-section > div {
-    width: 100%;
-    margin-bottom: 10px;
+      width: 100%;
+      margin-bottom: 10px;
   }
 
   .button-section {
-    flex-direction: column;
-    align-items: center;
+      flex-direction: column;
+      align-items: center;
   }
 
   .button-section .btn {
-    width: auto;
-    margin-bottom: 10px;
+      width: auto;
+      margin-bottom: 10px;
   }
 
-  .form-select,
-  .btn {
-    width: 100%;
+  .form-select, .btn {
+      width: 100%;
   }
 }
 
 @media (max-width: 576px) {
   .pitch-container {
-    max-width: 400px;
+      max-width: 400px;
   }
 
   .player-circle {
-    width: 35px;
-    height: 35px;
-    font-size: 0.7em;
+      width: 35px;
+      height: 35px;
+      font-size: 0.7em;
   }
 
-  .form-select,
-  .btn {
-    width: 100%;
+  .form-select, .btn {
+      width: 100%;
   }
 }

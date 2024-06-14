@@ -3,8 +3,9 @@
     <div class="col-lg-8 col-md-10 col-sm-12">
       <div class="pitch-container mx-auto" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
         <img src="assets/base_lavagna.png" alt="Campo da calcio" class="pitch">
-        <div class="player" *ngFor="let player of players" [ngStyle]="{'top.%': player.y, 'left.%': player.x, 'background-color': selectedColor}"
-             draggable="true" (dragstart)="onDragStart($event, player)">
+        <div class="player" *ngFor="let player of players"
+          [ngStyle]="{'top.%': player.y, 'left.%': player.x, 'background-color': selectedColor}" draggable="true"
+          (dragstart)="onDragStart($event, player)">
           <div class="player-circle">{{ player.name }}</div>
         </div>
       </div>
@@ -31,7 +32,7 @@
       <div class="button-section mt-4 d-flex justify-content-center">
         <div class="mb-2">
           <button class="btn reset-btn" (click)="resetPositions()">
-             <b><i class="bi bi-arrow-counterclockwise"></i>&nbsp;Reset</b>
+            <b><i class="bi bi-arrow-counterclockwise"></i>&nbsp;Reset</b>
           </button>
         </div>
       </div>
@@ -46,11 +47,19 @@
         </div>
         <div class="button-section mt-4 d-flex justify-content-center">
           <div class="mb-2">
-            <button class="Btn save-btn">
-              <svg class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>
-              <span class="icon2"></span>
-              <span class="tooltip">Save!</span>
-            </button>
+            <div class="button-section mt-4 d-flex justify-content-center">
+              <div class="mb-2">
+                <button class="Btn save-btn" id="saveButton">
+                  <svg class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z">
+                    </path>
+                  </svg>
+                  <span class="icon2"></span>
+                  <span class="tooltip">Save!</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
