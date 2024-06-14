@@ -21,15 +21,18 @@
         <div class="mb-2">
           <label for="moduleSelect" class="form-label">Scegli il modulo:</label>&nbsp;
           <select id="moduleSelect" class="form-select" (change)="onModuleChange($event)">
-            <option value="4-3-3">4-3-3&nbsp; (Offensivo)</option>
-            <option value="4-4-2">4-4-2&nbsp; (Contenimento)</option>
-            <option value="5-4-1">5-4-1&nbsp; (Difensivo)</option>
+            <option value="4-3-3">&nbsp;4-3-3&nbsp; (Offensivo)</option>
+            <option value="4-4-2">&nbsp;4-4-2&nbsp; (Equilibrio)</option>
+            <option value="5-4-1">&nbsp;5-4-1&nbsp; (Difensivo)</option>
+            <option value="3-5-2">&nbsp;3-5-2&nbsp; (Contenimento)</option>
           </select>
         </div>
       </div>
       <div class="button-section mt-4 d-flex justify-content-center">
         <div class="mb-2">
-          <button class="btn btn-warning mx-2 btn-sm" (click)="resetPositions()"><i class="bi bi-arrow-counterclockwise"></i>&nbsp; Reset</button>
+          <button class="btn reset-btn" (click)="resetPositions()">
+             <b><i class="bi bi-arrow-counterclockwise"></i>&nbsp;Reset</b>
+          </button>
         </div>
       </div>
       <div class="mt-4">

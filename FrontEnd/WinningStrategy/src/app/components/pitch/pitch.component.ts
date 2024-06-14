@@ -26,6 +26,7 @@ export class PitchComponent {
     selectedColor = 'blue';
     selectedPlayer = this.players[0];
     tacticalNotes = '';
+    defaultModule = '4-3-3';
 
     onDragStart(event: DragEvent, player: any) {
         event.dataTransfer?.setData('text/plain', JSON.stringify(player));
@@ -45,10 +46,7 @@ export class PitchComponent {
             const dropX = (event.offsetX / target.clientWidth) * 100;
             const dropY = (event.offsetY / target.clientHeight) * 100;
 
-            // Trova il giocatore corretto e aggiorna la sua posizione
-            const targetPlayer = this.players.find(
-                (p) => p.name === player.name
-            );
+            const targetPlayer = this.players.find((p) => p.name === player.name);
             if (targetPlayer) {
                 targetPlayer.x = dropX;
                 targetPlayer.y = dropY;
@@ -58,6 +56,11 @@ export class PitchComponent {
 
     onModuleChange(event: any) {
         const module = event.target.value;
+        this.defaultModule = module; // aggiorna il modulo predefinito
+        this.setPlayersForModule(module);
+    }
+
+    setPlayersForModule(module: string) {
         switch (module) {
             case '4-3-3':
                 this.players = [
@@ -113,18 +116,34 @@ export class PitchComponent {
                     { name: '#9', role: 'Role 11', x: 68, y: 50 },
                 ];
                 break;
+            case '3-5-2':
+                this.players = [
+                    { name: '#1', role: 'Role 1', x: 5, y: 50.2 },
+
+                    { name: '#2', role: 'Role 2', x: 22, y: 36 },
+                    { name: '#3', role: 'Role 3', x: 20, y: 50 },
+                    { name: '#4', role: 'Role 5', x: 22, y: 64 },
+
+                    { name: '#7', role: 'Role 4', x: 51, y: 18 },
+                    { name: '#6', role: 'Role 6', x: 45, y: 35 },
+                    { name: '#5', role: 'Role 7', x: 40, y: 50.2 },
+                    { name: '#8', role: 'Role 8', x: 49, y: 63 },
+                    { name: '#11', role: 'Role 9', x: 51, y: 80.3 },
+
+                    { name: '#10', role: 'Role 10', x: 71, y: 46 },
+                    { name: '#9', role: 'Role 11', x: 82, y: 53 },
+                ];
+                break;
             default:
                 break;
         }
     }
 
     resetPositions() {
-        this.onModuleChange({ target: { value: '4-3-3' } }); 
+        this.setPlayersForModule(this.defaultModule); 
     }
 
     save() {
         console.log('Salvato!');
     }
-    
 }
-
