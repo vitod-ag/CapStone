@@ -77,17 +77,18 @@
     border: none;
     border-radius: 15px;
     color: #000;
+    border: 2px solid #000;
     font-size: 1rem;
     font-weight: bold;
+    font-weight: bold;
     padding: 0.5rem 1rem;
-    margin-top: 1rem;
-    border: 2px solid #000;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 15px;
+    transition: background-color 0.3s, border-color 0.3s;
     text-decoration: none;
 
     &:hover {
       background-color: darken(#FCA311, 10%);
+      border-color: darken(#FFFF, 10%);
     }
 
     @media (max-width: 576px) {

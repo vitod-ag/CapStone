@@ -80,7 +80,6 @@
     h2 {
       font-weight: 700;
       font-size: 2rem;
-      margin-bottom: 1.5rem;
 
       .highlight {
         color: #FCA311;
@@ -154,6 +153,25 @@
 
     &:hover {
       transform: scale(1.0);
+    }
+  }
+
+  .btn-primary {
+    background-color: #FCA311;
+    border: none;
+    border-radius: 15px;
+    color: #000;
+    border: 2px solid #000;
+    font-size: 1rem;
+    font-weight: bold;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    transition: background-color 0.3s, border-color 0.3s;
+
+    &:hover {
+      background-color: darken(#FCA311, 10%);
+      border-color: darken(#FFFF, 10%);
     }
   }
 }
