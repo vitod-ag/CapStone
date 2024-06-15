@@ -36,7 +36,7 @@
     </div>
     <div class="col-lg-6 col-md-8 col-sm-12">
       <div class="pitch-container mx-auto" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
-        <img src="assets/base_lavagna.png" alt="Campo da calcio" class="pitch">
+        <img src="../../../assets/img/base_lavagna.png" alt="Campo da calcio" class="pitch">
         <div class="player" *ngFor="let player of players"
           [ngStyle]="{'top.%': player.y, 'left.%': player.x, 'background-color': selectedColor}" draggable="true"
           (dragstart)="onDragStart($event, player)">

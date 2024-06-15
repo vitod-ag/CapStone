@@ -28,4 +28,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Installation
 
-npm i bootstrap@5.3.3
+npm install bootstrap@5.3.3
+npm install @auth0/angular-jwt
+

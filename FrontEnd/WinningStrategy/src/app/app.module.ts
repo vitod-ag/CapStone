@@ -12,6 +12,9 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MainComponent } from './components/home/main/main.component';
 import { Error404Component } from './components/error404/error404.component';
+import { TokenInterceptor } from './interceptor/token.interceptor';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ProfiloComponent } from './components/dashboard/profilo/profilo.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +26,22 @@ import { Error404Component } from './components/error404/error404.component';
     HomeComponent,
     DashboardComponent,
     MainComponent,
-    Error404Component
+    Error404Component,
+    ProfiloComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
