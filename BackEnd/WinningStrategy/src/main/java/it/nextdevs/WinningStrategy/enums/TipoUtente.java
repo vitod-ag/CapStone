@@ -1,4 +1,5 @@
-package it.nextdevs.EpicEnergyServices.enums;
+
+package it.nextdevs.WinningStrategy.enums;
 
 public enum TipoUtente {
     ADMIN,USER,CLIENTE

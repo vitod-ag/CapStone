@@ -1,4 +1,4 @@
-package it.nextdevs.EpicEnergyServices.configuration;
+package it.nextdevs.WinningStrategy.configuration;
 
 import com.cloudinary.Cloudinary;
 import org.springframework.beans.factory.annotation.Value;

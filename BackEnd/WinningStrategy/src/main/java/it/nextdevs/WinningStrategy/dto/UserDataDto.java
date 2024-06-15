@@ -1,8 +1,6 @@
-package it.nextdevs.EpicEnergyServices.dto;
+package it.nextdevs.WinningStrategy.dto;
 
-import it.nextdevs.EpicEnergyServices.enums.TipoUtente;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import it.nextdevs.WinningStrategy.enums.TipoUtente;
 import lombok.Data;
 
 @Data

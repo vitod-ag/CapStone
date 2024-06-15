@@ -1,6 +1,6 @@
-package it.nextdevs.EpicEnergyServices.model;
+package it.nextdevs.WinningStrategy.model;
 
-import it.nextdevs.EpicEnergyServices.enums.TipoUtente;
+import it.nextdevs.WinningStrategy.enums.TipoUtente;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;

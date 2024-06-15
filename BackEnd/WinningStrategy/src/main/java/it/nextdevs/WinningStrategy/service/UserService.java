@@ -1,13 +1,13 @@
-package it.nextdevs.EpicEnergyServices.service;
+package it.nextdevs.WinningStrategy.service;
 
 import com.cloudinary.Cloudinary;
-import it.nextdevs.EpicEnergyServices.dto.UserDataDto;
-import it.nextdevs.EpicEnergyServices.dto.UserDto;
-import it.nextdevs.EpicEnergyServices.model.User;
-import it.nextdevs.EpicEnergyServices.enums.TipoUtente;
-import it.nextdevs.EpicEnergyServices.exception.BadRequestException;
-import it.nextdevs.EpicEnergyServices.exception.NotFoundException;
-import it.nextdevs.EpicEnergyServices.repository.UserRepository;
+import it.nextdevs.WinningStrategy.dto.UserDataDto;
+import it.nextdevs.WinningStrategy.dto.UserDto;
+import it.nextdevs.WinningStrategy.enums.TipoUtente;
+import it.nextdevs.WinningStrategy.exception.BadRequestException;
+import it.nextdevs.WinningStrategy.exception.NotFoundException;
+import it.nextdevs.WinningStrategy.model.User;
+import it.nextdevs.WinningStrategy.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

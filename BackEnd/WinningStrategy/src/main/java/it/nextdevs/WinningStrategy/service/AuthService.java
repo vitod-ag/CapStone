@@ -1,13 +1,12 @@
-package it.nextdevs.EpicEnergyServices.service;
+package it.nextdevs.WinningStrategy.service;
 
 
-
-import it.nextdevs.EpicEnergyServices.dto.AuthDataDto;
-import it.nextdevs.EpicEnergyServices.dto.UserDataDto;
-import it.nextdevs.EpicEnergyServices.dto.UserLoginDto;
-import it.nextdevs.EpicEnergyServices.model.User;
-import it.nextdevs.EpicEnergyServices.exception.UnauthorizedException;
-import it.nextdevs.EpicEnergyServices.security.JwtTool;
+import it.nextdevs.WinningStrategy.dto.AuthDataDto;
+import it.nextdevs.WinningStrategy.dto.UserDataDto;
+import it.nextdevs.WinningStrategy.dto.UserLoginDto;
+import it.nextdevs.WinningStrategy.exception.UnauthorizedException;
+import it.nextdevs.WinningStrategy.model.User;
+import it.nextdevs.WinningStrategy.security.JwtTool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package it.nextdevs.EpicEnergyServices.dto;
+package it.nextdevs.WinningStrategy.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -6,7 +6,7 @@ import lombok.Data;
 
 
 @Data
-public class UserDto{
+public class UserDto {
 
     @Email( regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$" )
     @NotBlank(message = "L'email dell'utente non può essere vuota, mancante o composta da soli spazi")

@@ -1,4 +1,4 @@
-package it.nextdevs.EpicEnergyServices.model;
+package it.nextdevs.WinningStrategy.model;
 
 import lombok.Data;
 import org.springframework.http.HttpStatus;

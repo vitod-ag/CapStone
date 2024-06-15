@@ -1,4 +1,4 @@
-package it.nextdevs.EpicEnergyServices.exception;
+package it.nextdevs.WinningStrategy.exception;
 
 public class BadRequestException extends RuntimeException{
 

@@ -1,18 +1,17 @@
-package it.nextdevs.EpicEnergyServices.controller;
+package it.nextdevs.WinningStrategy.controller;
 
 
 
-import it.nextdevs.EpicEnergyServices.dto.AuthDataDto;
-import it.nextdevs.EpicEnergyServices.dto.UserDto;
-import it.nextdevs.EpicEnergyServices.dto.UserLoginDto;
-import it.nextdevs.EpicEnergyServices.exception.BadRequestException;
-import it.nextdevs.EpicEnergyServices.service.AuthService;
-import it.nextdevs.EpicEnergyServices.service.UserService;
+import it.nextdevs.WinningStrategy.dto.AuthDataDto;
+import it.nextdevs.WinningStrategy.dto.UserDto;
+import it.nextdevs.WinningStrategy.dto.UserLoginDto;
+import it.nextdevs.WinningStrategy.exception.BadRequestException;
+import it.nextdevs.WinningStrategy.service.AuthService;
+import it.nextdevs.WinningStrategy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;

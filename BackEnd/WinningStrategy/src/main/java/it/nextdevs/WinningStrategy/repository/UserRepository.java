@@ -1,6 +1,6 @@
-package it.nextdevs.EpicEnergyServices.repository;
+package it.nextdevs.WinningStrategy.repository;
 
-import it.nextdevs.EpicEnergyServices.model.User;
+import it.nextdevs.WinningStrategy.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

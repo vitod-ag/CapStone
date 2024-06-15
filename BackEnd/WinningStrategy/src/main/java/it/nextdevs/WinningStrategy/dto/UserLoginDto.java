@@ -1,4 +1,4 @@
-package it.nextdevs.EpicEnergyServices.dto;
+package it.nextdevs.WinningStrategy.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
