@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./jumbotron.component.scss']
 })
 export class JumbotronComponent {
-
+  scrollToSection(event: Event) {
+    event.preventDefault(); 
+    const element = document.getElementById('createFormation');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

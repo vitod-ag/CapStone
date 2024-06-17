@@ -6,8 +6,56 @@
   <div class="jumbotron-content ms-5">
     <h1 class="display-1">Trova la tua strategia</h1>
     <p class="lead">Benvenuto nella Winning Strategy Web App. <br>Ottimizza le tue tattiche di gioco con dati in tempo reale e analisi dettagliate.</p>
-    <a href="#create-formation" class="explore-btn">Esplora</a>
+    <a href="#createFormation" (click)="scrollToSection($event)" class="explore-btn">Esplora</a>
   </div>
 </div>
 
-
+<div class="main-content pb-0">
+  <section class="about-section text-center my-5">
+    <h2 class="display-4 font-weight-bold">Cosa fa Winning Strategy</h2>
+    <p class="lead mt-4">
+      Con Winning Strategy, puoi <span class="highlight">esplorare</span> i campionati,
+      <span class="highlight">selezionare</span> la tua squadra preferita
+      e <span class="highlight">creare</span> schemi tattici avanzati.
+      Oppure, se ti senti già un allenatore che aspetta solo di emergere, sviluppa nuovi progetti tattici da zero
+      e salvali.
+      <br>Analizza.&nbsp;Realizza.&nbsp;Vinci!
+    </p>
+    <span id="createFormation" style="display: block; margin-top: -100px; padding-top: 100px;"></span>
+  </section>
+  <section class="section-dark text-center d-flex align-items-center">
+    <div class="container text-center p-3 d-flex align-items-center">
+      <div class="row w-100">
+        <div class="col-md-6 col-12 image-container d-flex align-items-center justify-content-center">
+          <img src="../../../../assets/img/lavagna_bianco.png" alt="Lavagna tattica" class="img-fluid rounded animate-img">
+        </div>
+        <div class="col-md-6 col-12 d-flex flex-column align-items-center justify-content-center">
+          <h2 class="display-4 font-weight-bold">Crea la tua <span class="highlight">Formazione</span></h2>
+          <p class="lead mt-4">
+            Scegli i moduli che più preferisci 
+            <br>posiziona dove vuoi i calciatori 
+            <br>prenditi la vittoria!
+          </p>
+          <a routerLink="/pitch" class="btn btn-primary mt-4">Vai a Crea la Formazione</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-light text-center d-flex align-items-center">
+    <div class="container text-center p-3 d-flex align-items-center">
+      <div class="row w-100">
+        <div class="col-md-6 col-12 order-md-2 image-container d-flex align-items-center justify-content-center">
+          <img src="../../../../assets/img/allenatoreX.png" alt="allenatore" class="img-fluid rounded animate-coach">
+        </div>
+        <div class="col-md-6 col-12 order-md-1 d-flex flex-column align-items-center justify-content-center">
+          <h2 class="display-4 font-weight-bold">Analizza e scegli la <span class="highlight">Squadra</span></h2>
+          <p class="lead mt-4">
+            Sei tu l'allenatore. 
+            <br>Seleziona la squadra che vuoi nei top campionati 
+            <br>conducila al successo con i tuoi schemi tattici
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

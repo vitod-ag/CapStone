@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthData } from 'src/app/interface/auth-data.interface';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  [x: string]: any;
 
+  user!: AuthData | null
+    constructor(private authSrv: AuthService) {}
+    ngOnInit(): void {
+      this.authSrv.user$.subscribe((data) => {
+        this.user = data
+      })
+    }
+  
+    logout() {
+      this.authSrv.logout();
+    }
 }

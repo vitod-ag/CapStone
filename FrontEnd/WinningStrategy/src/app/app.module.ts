@@ -9,12 +9,11 @@ import { JumbotronComponent } from './components/home/jumbotron/jumbotron.compon
 import { FooterComponent } from './components/home/footer/footer.component';
 import { PitchComponent } from './components/pitch/pitch.component';
 import { HomeComponent } from './components/home/home.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MainComponent } from './components/home/main/main.component';
 import { Error404Component } from './components/error404/error404.component';
 import { TokenInterceptor } from './interceptor/token.interceptor';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { ProfiloComponent } from './components/dashboard/profilo/profilo.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +23,9 @@ import { ProfiloComponent } from './components/dashboard/profilo/profilo.compone
     FooterComponent,
     PitchComponent,
     HomeComponent,
-    DashboardComponent,
     MainComponent,
     Error404Component,
-    ProfiloComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
