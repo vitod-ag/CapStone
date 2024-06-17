@@ -50,7 +50,8 @@
     }
   }
 
-  .section-dark, .section-light {
+  .section-dark,
+  .section-light {
     padding: 2rem 1rem;
     text-align: center;
 
@@ -124,11 +125,11 @@
 
   .section-dark {
     background-color: #14213d;
-    color: #FFFF;
+    color: #FFF;
   }
 
   .section-light {
-    background-color: #FFFF;
+    background-color: #FFF;
     color: #14213d;
   }
 
@@ -162,16 +163,21 @@
     border-radius: 15px;
     color: #000;
     border: 2px solid #000;
-    font-size: 1rem;
+    font-size: 1.2rem; 
     font-weight: bold;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 15px;
+    padding: 0.75rem 1.5rem; 
     transition: background-color 0.3s, border-color 0.3s;
+    text-decoration: none;
+    margin-top: 1.5rem; 
 
     &:hover {
       background-color: darken(#FCA311, 10%);
       border-color: darken(#FFFF, 10%);
+    }
+
+    @media (max-width: 576px) {
+      font-size: 1rem; 
+      padding: 0.5rem 1rem; 
     }
   }
 }

@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/home/navbar/navbar.component';
 import { JumbotronComponent } from './components/home/jumbotron/jumbotron.component';
 import { FooterComponent } from './components/home/footer/footer.component';
-import { PitchComponent } from './components/pitch/pitch.component';
+import { PitchComponent } from './pitch/pitch.component';
 import { HomeComponent } from './components/home/home.component';
 import { MainComponent } from './components/home/main/main.component';
 import { Error404Component } from './components/error404/error404.component';

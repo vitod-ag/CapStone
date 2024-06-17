@@ -216,45 +216,105 @@ select, textarea, input{
   background-color: #28a745 !important; /* Green background */
 }
 
+#saveButton .svgIcon {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.tooltip {
+  display: none; /* Hide tooltip initially */
+}
+
+#saveButton:hover .tooltip {
+  display: block; /* Show tooltip on hover */
+}
+
 /* Responsive styles */
 @media (max-width: 820px) {
   .config-section {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .config-section > div {
-      width: 100%;
-      margin-bottom: 10px;
+    width: 100%;
+    margin-bottom: 10px;
   }
 
   .button-section {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .button-section .btn {
-      width: auto;
-      margin-bottom: 10px;
+    width: auto;
+    margin-bottom: 10px;
   }
 
   .form-select, .btn {
-      width: 100%;
+    width: 100%;
   }
 }
 
 @media (max-width: 576px) {
   .pitch-container {
-      max-width: 400px;
+    max-width: 400px;
   }
 
   .player-circle {
-      width: 35px;
-      height: 35px;
-      font-size: 0.7em;
+    width: 35px;
+    height: 35px;
+    font-size: 0.7em;
   }
 
   .form-select, .btn {
-      width: 100%;
+    width: 100%;
   }
+
+  /* Styles for specific breakpoints to add space between the Save button and the pitch at smaller screen sizes */
+@media (max-width: 480px) {
+  .container-fluid .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pitch-container {
+    margin-bottom: 1rem; /* Add space below the pitch container */
+  }
+
+  .button-section {
+    margin-bottom: 1rem; /* Add space below the button section */
+  }
+}
+
+@media (max-width: 576px) {
+  .container-fluid .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pitch-container {
+    margin-bottom: 1rem; /* Add space below the pitch container */
+  }
+
+  .button-section {
+    margin-bottom: 1rem; /* Add space below the button section */
+  }
+}
+
+@media (max-width: 820px) {
+  .container-fluid .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pitch-container {
+    margin-bottom: 1rem; /* Add space below the pitch container */
+  }
+
+  .button-section {
+    margin-bottom: 1rem; /* Add space below the button section */
+  }
+}
+
 }
