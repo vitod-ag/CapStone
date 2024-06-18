@@ -1,2 +1,8 @@
-package it.nextdevs.WinningStrategy.dto;public class CalciatoreDto {
+package it.nextdevs.WinningStrategy.dto;
+
+import lombok.Data;
+
+@Data
+public class CalciatoreDto {
+
 }

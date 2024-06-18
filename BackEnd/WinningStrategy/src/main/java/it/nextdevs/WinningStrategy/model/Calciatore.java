@@ -1,9 +1,19 @@
 package it.nextdevs.WinningStrategy.model;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
-public class Calaciatore {
+//Un Calciatore appartiene a una Squadra
+public class Calciatore {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String nomeCompleto;
+    private String ruolo;
+
+    @ManyToOne
+    @JoinColumn(name = "squadra_id")
+    private Squadra squadra;
 }
