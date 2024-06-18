@@ -1,12 +1,22 @@
 .main-content {
-  padding: 2rem 1rem 0rem 1rem;
-  background-color: #E5E5E5;
-
   .about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E5E5E5;
+    padding: 5rem;
+    border-radius: 10px;
+
+    .about-content {
+      max-width: 1200px;
+      width: 100%;
+    }
+
     h2 {
       font-weight: 700;
       font-size: 2rem;
       margin-bottom: 1.5rem;
+      color: #14213D;
 
       .highlight {
         color: #FCA311;
@@ -17,9 +27,9 @@
     p {
       font-size: 1.25rem;
       line-height: 1.6;
-      max-width: 800px;
       margin: 0 auto;
       text-align: center;
+      color: #14213D;
 
       .highlight {
         color: #FCA311;
@@ -124,13 +134,13 @@
   }
 
   .section-dark {
-    background-color: #14213d;
-    color: #FFF;
+    background-color: #14213D;
+    color: #E5E5E5;
   }
 
   .section-light {
-    background-color: #FFF;
-    color: #14213d;
+    background-color: #E5E5E5;
+    color: #14213D;
   }
 
   .img-fluid {
@@ -172,7 +182,7 @@
 
     &:hover {
       background-color: darken(#FCA311, 10%);
-      border-color: darken(#FFFF, 10%);
+      border-color: darken(#FFF, 10%);
     }
 
     @media (max-width: 576px) {
