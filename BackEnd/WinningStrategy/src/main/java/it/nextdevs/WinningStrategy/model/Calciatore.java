@@ -12,6 +12,7 @@ public class Calciatore {
     private int id;
     private String nomeCompleto;
     private String ruolo;
+    private int numeroMaglia;
 
     @ManyToOne
     @JoinColumn(name = "squadra_id")

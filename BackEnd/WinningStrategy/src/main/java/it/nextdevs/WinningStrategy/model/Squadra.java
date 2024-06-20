@@ -14,6 +14,7 @@ public class Squadra {
     @GeneratedValue
     private int id;
     private String nome;
+    private String logo;
 
     @ManyToOne
     @JoinColumn(name = "campionato_id")

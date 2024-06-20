@@ -19,9 +19,11 @@
     <div class="form-container sign-in-container">
         <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
             <h1>Accedi</h1>
-            <div class="social-container"></div><input type="email" placeholder="Email" name="email" id="email" required
-                class="form-control" ngModel /> <input type="password" placeholder="Password" name="password"
-                id="password" required class="form-control" ngModel /><button type="submit " class="overEd mt-4"
+            <div class="social-container">
+                <app-google-login></app-google-login>
+            </div><input type="email" placeholder="Email" name="email" id="email" required class="form-control"
+                ngModel /> <input type="password" placeholder="Password" name="password" id="password" required
+                class="form-control" ngModel /><button type="submit " class="overEd mt-4"
                 [disabled]="loginForm.invalid">Accedi</button>
         </form>
     </div>

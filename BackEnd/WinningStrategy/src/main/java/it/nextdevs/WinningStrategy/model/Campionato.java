@@ -13,6 +13,7 @@ public class Campionato {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nome;
+    private String logo;
 
     @OneToMany(mappedBy = "campionato")
     private List<Squadra> squadre;

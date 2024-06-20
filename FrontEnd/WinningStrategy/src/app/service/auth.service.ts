@@ -34,6 +34,24 @@ export class AuthService {
     )
   }
 
+  loginGoogle(token:any){
+
+    return this.http.post<AuthData>(`${environment.apiUrl}auth/login/oauth2/code/google`,token).pipe(
+      tap(async (user) => {
+        this.authSub.next(user);
+        localStorage.setItem('user', JSON.stringify(user));
+        this.autoLogout(user);
+      })
+    )
+  }
+  
+  private initializeGoogleLogin() {
+    // Assicurati che il componente GoogleLoginComponent venga reinizializzato
+    // ad esempio, ricaricando la pagina o richiamando la funzione di inizializzazione del componente
+   
+    window.location.reload(); // Questo è un modo semplice ma potrebbe non essere il più elegante
+  }
+
   updateUser(data: User) {
     const datas = this.authSub.getValue();
     if (datas) {
@@ -46,7 +64,8 @@ export class AuthService {
   logout() {
     this.authSub.next(null);
     localStorage.removeItem('user');
-    this.router.navigate(['/'])
+    this.router.navigate(['/']);
+    this.initializeGoogleLogin();
   }
 
   private autoLogout(data: AuthData) {
@@ -93,4 +112,5 @@ export class AuthService {
       }
       return throwError(error)
   }
+
 }
