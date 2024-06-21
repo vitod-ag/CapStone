@@ -2,11 +2,11 @@
   "campionati": [
     {
       "nome": "Serie A",
-      "logo": "url_logo_serie_a",
+      "logo": "https://logospng.org/wp-content/uploads/serie-a-tim.png",
       "squadre": [
         {
           "nome": "Juventus",
-          "logo": "url_logo_juventus",
+          "logo": "https://w7.pngwing.com/pngs/751/25/png-transparent-juventus-f-c-uefa-champions-league-real-madrid-c-f-2017-18-serie-a-coppa-italia-leicester-city-f-c-angle-text-sport.png",
           "calciatori": [
             {
               "nomeCompleto": "Wojciech Szczesny",
@@ -109,6 +109,11 @@
               "numeroMaglia": 17
             },
             {
+              "nomeCompleto": "SECSI-MENELAO",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 8
+            },
+            {
               "nomeCompleto": "Filip Kostic",
               "ruolo": "Centrocampista",
               "numeroMaglia": 11
@@ -137,6 +142,143 @@
               "nomeCompleto": "Kenan Yildiz",
               "ruolo": "Attaccante",
               "numeroMaglia": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nome": "Premier League",
+      "logo": "url_logo_premier_league",
+      "squadre": [
+        {
+          "nome": "Arsenal",
+          "logo": "url_logo_arsenal",
+          "calciatori": [
+            {
+              "nomeCompleto": "David Raya",
+              "ruolo": "Portiere",
+              "numeroMaglia": 22
+            },
+            {
+              "nomeCompleto": "Aaron Ramsdale",
+              "ruolo": "Portiere",
+              "numeroMaglia": 1
+            },
+            {
+              "nomeCompleto": "Karl Hein",
+              "ruolo": "Portiere",
+              "numeroMaglia": 31
+            },
+            {
+              "nomeCompleto": "William Saliba",
+              "ruolo": "Difensore",
+              "numeroMaglia": 2
+            },
+            {
+              "nomeCompleto": "Gabriel",
+              "ruolo": "Difensore",
+              "numeroMaglia": 6
+            },
+            {
+              "nomeCompleto": "Jurrien Timber",
+              "ruolo": "Difensore",
+              "numeroMaglia": 12
+            },
+            {
+              "nomeCompleto": "Oleksandr Zinchenko",
+              "ruolo": "Difensore",
+              "numeroMaglia": 35
+            },
+            {
+              "nomeCompleto": "Jakub Kiwior",
+              "ruolo": "Difensore",
+              "numeroMaglia": 15
+            },
+            {
+              "nomeCompleto": "Ben White",
+              "ruolo": "Difensore",
+              "numeroMaglia": 4
+            },
+            {
+              "nomeCompleto": "Takehiro Tomiyasu",
+              "ruolo": "Difensore",
+              "numeroMaglia": 18
+            },
+            {
+              "nomeCompleto": "Cedric Soares",
+              "ruolo": "Difensore",
+              "numeroMaglia": 17
+            },
+            {
+              "nomeCompleto": "Declan Rice",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 41
+            },
+            {
+              "nomeCompleto": "Thomas Partey",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 5
+            },
+            {
+              "nomeCompleto": "Jorginho",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 20
+            },
+            {
+              "nomeCompleto": "Mohamed Elneny",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 25
+            },
+            {
+              "nomeCompleto": "Martin Odegaard",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 8
+            },
+            {
+              "nomeCompleto": "Kai Havertz",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 29
+            },
+            {
+              "nomeCompleto": "Emile Smith Rowe",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 10
+            },
+            {
+              "nomeCompleto": "Fabio Viera",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 21
+            },
+            {
+              "nomeCompleto": "Gabriel Martinelli",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 11
+            },
+            {
+              "nomeCompleto": "Leandro Trossard",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 19
+            },
+            {
+              "nomeCompleto": "Bukayo Saka",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 7
+            },
+            {
+              "nomeCompleto": "Reiss Nelson",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 24
+            },
+            {
+              "nomeCompleto": "Gabriel Jesus",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 9
+            },
+            {
+              "nomeCompleto": "Eddie Nketiah",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 14
             }
           ]
         }
