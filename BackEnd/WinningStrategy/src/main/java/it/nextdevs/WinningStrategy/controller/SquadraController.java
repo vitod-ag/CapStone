@@ -49,6 +49,7 @@ public class SquadraController {
     }
 
     @PatchMapping(value = "/squadra/{id}/logo", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PreAuthorize("hasAuthority('ADMIN')")
     public Squadra patchImmagineSquadra(@PathVariable int id, @RequestParam("file") MultipartFile avatar) throws IOException {
         return squadraService.patchImmagineSquadra(id, avatar);
     }

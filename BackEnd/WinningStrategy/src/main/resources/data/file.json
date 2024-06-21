@@ -1,0 +1,146 @@
+{
+  "campionati": [
+    {
+      "nome": "Serie A",
+      "logo": "url_logo_serie_a",
+      "squadre": [
+        {
+          "nome": "Juventus",
+          "logo": "url_logo_juventus",
+          "calciatori": [
+            {
+              "nomeCompleto": "Wojciech Szczesny",
+              "ruolo": "Portiere",
+              "numeroMaglia": 1
+            },
+            {
+              "nomeCompleto": "Mattia Perin",
+              "ruolo": "Portiere",
+              "numeroMaglia": 36
+            },
+            {
+              "nomeCompleto": "Carlo Pinsoglio",
+              "ruolo": "Portiere",
+              "numeroMaglia": 31
+            },
+            {
+              "nomeCompleto": "Federico Gatti",
+              "ruolo": "Difensore",
+              "numeroMaglia": 4
+            },
+            {
+              "nomeCompleto": "Gleison Bremer",
+              "ruolo": "Difensore",
+              "numeroMaglia": 3
+            },
+            {
+              "nomeCompleto": "Tiago Djalò",
+              "ruolo": "Difensore",
+              "numeroMaglia": 33
+            },
+            {
+              "nomeCompleto": "Danilo",
+              "ruolo": "Difensore",
+              "numeroMaglia": 6
+            },
+            {
+              "nomeCompleto": "Alex Sandro",
+              "ruolo": "Difensore",
+              "numeroMaglia": 12
+            },
+            {
+              "nomeCompleto": "Andrea Cambiaso",
+              "ruolo": "Difensore",
+              "numeroMaglia": 27
+            },
+            {
+              "nomeCompleto": "Mattia De Sciglio",
+              "ruolo": "Difensore",
+              "numeroMaglia": 2
+            },
+            {
+              "nomeCompleto": "Manuel Locatelli",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 5
+            },
+            {
+              "nomeCompleto": "Weston McKennie",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 16
+            },
+            {
+              "nomeCompleto": "Adrien Rabiot",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 25
+            },
+            {
+              "nomeCompleto": "Fabio Miretti",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 20
+            },
+            {
+              "nomeCompleto": "Nicolò Fagioli",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 21
+            },
+            {
+              "nomeCompleto": "Carlos Alcaraz",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 26
+            },
+            {
+              "nomeCompleto": "Hans Nicolussi Caviglia",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 41
+            },
+            {
+              "nomeCompleto": "Paul Pogba",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 10
+            },
+            {
+              "nomeCompleto": "Timothy Weah",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 22
+            },
+            {
+              "nomeCompleto": "Samuel Iling-Junior",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 17
+            },
+            {
+              "nomeCompleto": "Filip Kostic",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 11
+            },
+            {
+              "nomeCompleto": "Federico Chiesa",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 7
+            },
+            {
+              "nomeCompleto": "Dusan Vlahovic",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 9
+            },
+            {
+              "nomeCompleto": "Moise Kean",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 18
+            },
+            {
+              "nomeCompleto": "Arkadiusz Milik",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 14
+            },
+            {
+              "nomeCompleto": "Kenan Yildiz",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 15
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

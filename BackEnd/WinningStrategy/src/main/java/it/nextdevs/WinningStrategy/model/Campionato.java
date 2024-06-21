@@ -10,11 +10,11 @@ import java.util.List;
 //Un Campionato ha molte Squadre
 public class Campionato {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private int id;
     private String nome;
     private String logo;
 
-    @OneToMany(mappedBy = "campionato")
+    @OneToMany(mappedBy = "campionati")
     private List<Squadra> squadre;
 }

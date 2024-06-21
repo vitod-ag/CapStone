@@ -4,7 +4,6 @@ import com.cloudinary.Cloudinary;
 import it.nextdevs.WinningStrategy.dto.CampionatoDto;
 import it.nextdevs.WinningStrategy.exception.NotFoundException;
 import it.nextdevs.WinningStrategy.model.Campionato;
-import it.nextdevs.WinningStrategy.model.Squadra;
 import it.nextdevs.WinningStrategy.repository.CampionatoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

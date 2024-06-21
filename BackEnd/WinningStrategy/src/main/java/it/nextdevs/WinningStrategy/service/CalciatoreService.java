@@ -1,12 +1,11 @@
 package it.nextdevs.WinningStrategy.service;
 
 import it.nextdevs.WinningStrategy.dto.CalciatoreDto;
-import it.nextdevs.WinningStrategy.dto.SquadraDto;
 import it.nextdevs.WinningStrategy.exception.NotFoundException;
 import it.nextdevs.WinningStrategy.model.Calciatore;
-import it.nextdevs.WinningStrategy.model.Campionato;
 import it.nextdevs.WinningStrategy.model.Squadra;
 import it.nextdevs.WinningStrategy.repository.CalciatoreRepository;
+import it.nextdevs.WinningStrategy.repository.SquadraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -14,7 +13,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -23,11 +21,16 @@ public class CalciatoreService {
     @Autowired
     private CalciatoreRepository calciatoreRepository;
 
+    @Autowired
+    private SquadraRepository squadraRepository;
+
     public Integer saveCalciatore(CalciatoreDto calciatoreDto) {
         Calciatore calciatore = new Calciatore();
         calciatore.setNomeCompleto(calciatoreDto.getNomeCompleto());
         calciatore.setRuolo(calciatoreDto.getRuolo());
         calciatore.setNumeroMaglia(calciatoreDto.getNumeroMaglia());
+        Optional<Squadra> squadraOptional = squadraRepository.findById(calciatoreDto.getSquadraId());
+        squadraOptional.ifPresent(calciatore::setSquadra);
         calciatoreRepository.save(calciatore);
         return calciatore.getId();
     }
@@ -43,7 +46,7 @@ public class CalciatoreService {
     }
 
     public Calciatore getCalciatoreByNome(String nome) {
-        Optional<Calciatore> calciatoreOptional = calciatoreRepository.findByNome(nome);
+        Optional<Calciatore> calciatoreOptional = calciatoreRepository.findByNomeCompleto(nome);
         if (calciatoreOptional.isPresent()) {
             return calciatoreOptional.get();
         } else {

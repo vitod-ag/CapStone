@@ -49,6 +49,7 @@ public class CampionatoController {
     }
 
     @PatchMapping(value = "/campionato/{id}/logo", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PreAuthorize("hasAuthority('ADMIN')")
     public Campionato patchImmagineCampionato(@PathVariable int id, @RequestParam("file") MultipartFile avatar) throws IOException {
         return campionatoService.patchImmagineCampionato(id, avatar);
     }

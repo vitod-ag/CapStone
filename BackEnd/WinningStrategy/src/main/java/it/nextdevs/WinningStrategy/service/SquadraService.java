@@ -6,6 +6,7 @@ import it.nextdevs.WinningStrategy.dto.SquadraDto;
 import it.nextdevs.WinningStrategy.exception.NotFoundException;
 import it.nextdevs.WinningStrategy.model.Campionato;
 import it.nextdevs.WinningStrategy.model.Squadra;
+import it.nextdevs.WinningStrategy.repository.CampionatoRepository;
 import it.nextdevs.WinningStrategy.repository.SquadraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -26,12 +27,17 @@ public class SquadraService {
     private SquadraRepository squadraRepository;
 
     @Autowired
+    private CampionatoRepository campionatoRepository;
+
+    @Autowired
     private Cloudinary cloudinary;
 
 
     public Integer saveSquadra(SquadraDto squadraDto) {
         Squadra squadra = new Squadra();
         squadra.setNome(squadraDto.getNome());
+        Optional<Campionato> campionatoOptional = campionatoRepository.findById(squadraDto.getCampionatoId());
+        campionatoOptional.ifPresent(squadra::setCampionati);
         squadraRepository.save(squadra);
         return squadra.getId();
     }

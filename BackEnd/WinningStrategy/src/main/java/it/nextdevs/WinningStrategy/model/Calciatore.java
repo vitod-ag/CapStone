@@ -8,7 +8,7 @@ import lombok.Data;
 //Un Calciatore appartiene a una Squadra
 public class Calciatore {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private int id;
     private String nomeCompleto;
     private String ruolo;

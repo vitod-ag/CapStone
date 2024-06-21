@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface CalciatoreRepository extends JpaRepository<Calciatore, Integer> {
-    Optional<Calciatore> findByNome(String nome);
+    Optional<Calciatore> findByNomeCompleto(String nome);
 }

@@ -7,7 +7,7 @@ import java.util.List;
 
 @Data
 @Entity
-//Una Squadra appartiene a un Campionato
+//Diverse Squadre appartiene a un Campionato
 //Una Squadra ha molti Calciatori
 public class Squadra {
     @Id
