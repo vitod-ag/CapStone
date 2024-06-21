@@ -20,6 +20,7 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GoogleLoginComponent } from './components/dashboard/google-login/google-login.component';
+import { SceltaSquadraComponent } from './components/home/scelta-squadra/scelta-squadra.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { GoogleLoginComponent } from './components/dashboard/google-login/google
     MainComponent,
     Error404Component,
     DashboardComponent,
-    GoogleLoginComponent
+    GoogleLoginComponent,
+    SceltaSquadraComponent
   ],
   imports: [
     BrowserModule,

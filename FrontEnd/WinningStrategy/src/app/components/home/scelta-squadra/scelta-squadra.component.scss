@@ -1,0 +1,90 @@
+body {
+    background-image: url('../../../../assets/img/sfondo_tattica.png'); 
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .container-overlay {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .container-form {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    z-index: 2;
+  }
+  
+  .form-group label {
+    color: #14213D;
+  }
+  
+  .form-control {
+    border: 1px solid #14213D;
+  }
+  
+  .btn-primary {
+    background-color: #FCA311;
+    border-color: #FCA311;
+    color: #FFFFFF;
+  }
+  
+  .btn-primary:disabled {
+    background-color: #E5E5E5;
+    border-color: #E5E5E5;
+    color: #000000;
+  }
+  
+  @media (max-width: 768px) {
+    .container-form {
+      padding: 10px;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .btn {
+      width: 100%;
+    }
+  
+    .form-group {
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .container-form {
+      padding: 5px;
+    }
+  
+    h2 {
+      font-size: 1.25rem;
+    }
+  
+    .btn {
+      width: 100%;
+    }
+  
+    .form-group {
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+  
