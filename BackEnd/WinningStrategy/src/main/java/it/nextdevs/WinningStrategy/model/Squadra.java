@@ -1,5 +1,6 @@
 package it.nextdevs.WinningStrategy.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -21,5 +22,6 @@ public class Squadra {
     private Campionato campionati;
 
     @OneToMany(mappedBy = "squadra")
+    @JsonIgnore
     private List<Calciatore> calciatori;
 }
