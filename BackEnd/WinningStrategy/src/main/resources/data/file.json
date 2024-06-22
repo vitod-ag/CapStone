@@ -146,6 +146,132 @@
           ]
         },
         {
+          "nome": "Atalanta",
+          "logo": "https://w7.pngwing.com/pngs/751/25/png-transparent-juventus-f-c-uefa-champions-league-real-madrid-c-f-2017-18-serie-a-coppa-italia-leicester-city-f-c-angle-text-sport.png",
+          "calciatori": [
+            {
+              "nomeCompleto": "Marco Carnesecchi",
+              "ruolo": "Portiere",
+              "numeroMaglia": 29
+            },
+            {
+              "nomeCompleto": "Juan Musso",
+              "ruolo": "Portiere",
+              "numeroMaglia": 1
+            },
+            {
+              "nomeCompleto": "Francesco Rossi",
+              "ruolo": "Portiere",
+              "numeroMaglia": 31
+            },
+            {
+              "nomeCompleto": "Giorgio Scalvini",
+              "ruolo": "Difensore",
+              "numeroMaglia": 42
+            },
+            {
+              "nomeCompleto": "Isak Hien",
+              "ruolo": "Difensore",
+              "numeroMaglia": 4
+            },
+            {
+              "nomeCompleto": "Berat Djimsiti",
+              "ruolo": "Difensore",
+              "numeroMaglia": 19
+            },
+            {
+              "nomeCompleto": "Sead Kolasinac",
+              "ruolo": "Difensore",
+              "numeroMaglia": 23
+            },
+            {
+              "nomeCompleto": "Rafael Toloi",
+              "ruolo": "Difensore",
+              "numeroMaglia": 2
+            },
+            {
+              "nomeCompleto": "Jose Palomino",
+              "ruolo": "Difensore",
+              "numeroMaglia": 6
+            },
+            {
+              "nomeCompleto": "Marten de Roon",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 15
+            },
+            {
+              "nomeCompleto": "Ederson",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 13
+            },
+            {
+              "nomeCompleto": "Mario Pasalic",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 8
+            },
+            {
+              "nomeCompleto": "Michel Adopo",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 25
+            },
+            {
+              "nomeCompleto": "Emil Holm",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 3
+            },
+            {
+              "nomeCompleto": "Davide Zappacosta",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 77
+            },
+            {
+              "nomeCompleto": "Hans Hateboer",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 33
+            },
+            {
+              "nomeCompleto": "Matteo Ruggeri",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 22
+            },
+            {
+              "nomeCompleto": "Mitchel Bakker",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 20
+            },
+            {
+              "nomeCompleto": "Teun Koopmeiners",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 7
+            },
+            {
+              "nomeCompleto": "Charles De Ketelaere",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 17
+            },
+            {
+              "nomeCompleto": "Aleksey Miranchuk",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 59
+            },
+            {
+              "nomeCompleto": "Ademola Lookman",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 11
+            },
+            {
+              "nomeCompleto": "Gianluca Scamacca",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 90
+            },
+            {
+              "nomeCompleto": "El Bilal Touré",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 10
+            }
+          ]
+        },
+        {
           "nome": "Milan",
           "logo": "https://w7.pngwing.com/pngs/656/989/png-transparent-ac-milan-uefa-champions-league-football-ac-milan.png",
           "calciatori": [
