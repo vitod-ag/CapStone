@@ -19,7 +19,8 @@ export class SceltaSquadraComponent {
 
   ngOnInit(): void {
     this.campionaService.getCampionati().subscribe(data => {
-      this.campionati = data;
+      console.log('Campionati ricevuti:', data);
+      this.campionati = data.content;
     })
   }
 

@@ -13,7 +13,7 @@ export class CampionatoService {
 
   constructor(private http: HttpClient) {}
 
-  getCampionati(): Observable<Campionato[]> {
-    return this.http.get<Campionato[]>(this.apiUrl);
+  getCampionati(): Observable<{ content: Campionato[] }> {
+    return this.http.get<{ content: Campionato[] }>(this.apiUrl);
   }
 }
