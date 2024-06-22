@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 public class SquadraController {
@@ -40,6 +41,13 @@ public class SquadraController {
                                        @RequestParam(defaultValue = "15") int size,
                                        @RequestParam(defaultValue = "id") String sortBy) {
         return squadraService.getAllSquadra(page, size, sortBy);
+    }
+
+    @GetMapping("/campionato/{campionatoId}/squadre")
+    @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
+    public List<Squadra> getSquadreByCampionato(@PathVariable int campionatoId ) {
+        System.out.println(campionatoId);
+        return squadraService.getSquadreByCampionato(campionatoId);
     }
 
     @GetMapping("/squadra/{nome}")

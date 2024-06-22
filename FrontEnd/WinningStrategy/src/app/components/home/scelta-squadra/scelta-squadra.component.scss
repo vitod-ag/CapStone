@@ -1,5 +1,4 @@
 body {
-  background-image: url('../../../../assets/img/sfondo_tattica.png');
   background-size: cover;
   background-position: center;
   margin: 0;
@@ -10,6 +9,27 @@ body {
   justify-content: center;
   overflow: hidden;
 }
+
+.container_scelta {
+  background-color: #E5E5E5 !important;
+  background-image: url(../../../../assets/img/sfondo_tattica.png);
+  background-blend-mode: overlay;
+  background-size: cover; /* Questa proprietà farà sì che l'immagine copra l'intero container */
+  background-position: center; /* Centra l'immagine */
+  background-repeat: no-repeat; /* Evita che l'immagine si ripeta */
+  min-height: 100vh; /* Assicura che il container copra l'intera altezza della viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame-large {
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.8); /* Aggiungi uno sfondo bianco semi-trasparente al frame */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiungi un'ombra leggera */
+}
+
 
 .container-overlay {
   position: relative;
@@ -97,5 +117,8 @@ body {
 
 .frame {
   background-color: #FFFFFF;
-  border: 2px solid #14213D;
+  border: 1px solid #14213D;
+  height: 180px;
 }
+
+

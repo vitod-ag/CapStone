@@ -109,7 +109,7 @@
               "numeroMaglia": 17
             },
             {
-              "nomeCompleto": "SECSI-MENELAO",
+              "nomeCompleto": "Secsi-Menelao",
               "ruolo": "Centrocampista",
               "numeroMaglia": 8
             },
@@ -142,6 +142,137 @@
               "nomeCompleto": "Kenan Yildiz",
               "ruolo": "Attaccante",
               "numeroMaglia": 15
+            }
+          ]
+        },
+        {
+          "nome": "Milan",
+          "logo": "https://w7.pngwing.com/pngs/656/989/png-transparent-ac-milan-uefa-champions-league-football-ac-milan.png",
+          "calciatori": [
+            {
+              "nomeCompleto": "Mike Maignan",
+              "ruolo": "Portiere",
+              "numeroMaglia": 16
+            },
+            {
+              "nomeCompleto": "Marco Sportiello",
+              "ruolo": "Portiere",
+              "numeroMaglia": 57
+            },
+            {
+              "nomeCompleto": "Antonio Mirante",
+              "ruolo": "Portiere",
+              "numeroMaglia": 83
+            },
+            {
+              "nomeCompleto": "Fikayo Tomori",
+              "ruolo": "Difensore",
+              "numeroMaglia": 23
+            },
+            {
+              "nomeCompleto": "Malick Diaw",
+              "ruolo": "Difensore",
+              "numeroMaglia": 28
+            },
+            {
+              "nomeCompleto": "Pierre Kalulu",
+              "ruolo": "Difensore",
+              "numeroMaglia": 20
+            },
+            {
+              "nomeCompleto": "Matteo Gabbia",
+              "ruolo": "Difensore",
+              "numeroMaglia": 46
+            },
+            {
+              "nomeCompleto": "Simon Kjaer",
+              "ruolo": "Difensore",
+              "numeroMaglia": 24
+            },
+            {
+              "nomeCompleto": "Mattia Caldara",
+              "ruolo": "Difensore",
+              "numeroMaglia": 30
+            },
+            {
+              "nomeCompleto": "Theo Hernandez",
+              "ruolo": "Difensore",
+              "numeroMaglia": 19
+            },
+            {
+              "nomeCompleto": "Davide Calabria",
+              "ruolo": "Difensore",
+              "numeroMaglia": 2
+            },
+            {
+              "nomeCompleto": "Filippo Terracciano",
+              "ruolo": "Difensore",
+              "numeroMaglia": 38
+            },
+            {
+              "nomeCompleto": "Alessandro Florenzi",
+              "ruolo": "Difensore",
+              "numeroMaglia": 42
+            },
+            {
+              "nomeCompleto": "Ismael Bennacer",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 4
+            },
+            {
+              "nomeCompleto": "Yacine Adli",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 7
+            },
+            {
+              "nomeCompleto": "Tijjani Reijnders",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 14
+            },
+            {
+              "nomeCompleto": "Ruben Loftus-Cheek",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 8
+            },
+            {
+              "nomeCompleto": "Yunus Musah",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 80
+            },
+            {
+              "nomeCompleto": "Tommaso Pobega",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 32
+            },
+            {
+              "nomeCompleto": "Rafael Leão",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 10
+            },
+            {
+              "nomeCompleto": "Noah Okafor",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 17
+            },
+            {
+              "nomeCompleto": "Christian Pulisic",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 11
+            },
+            {
+              "nomeCompleto": "Samuel Chukwueze",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 21
+            },
+            {
+              "nomeCompleto": "Luka Jovic",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 15
+            },
+            {
+              "nomeCompleto": "Olivier Giroud",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 9
             }
           ]
         }
@@ -279,6 +410,132 @@
               "nomeCompleto": "Eddie Nketiah",
               "ruolo": "Attaccante",
               "numeroMaglia": 14
+            }
+          ]
+        },
+        {
+          "nome": "Liverpool",
+          "logo": "https://w7.pngwing.com/pngs/656/989/png-transparent-ac-milan-uefa-champions-league-football-ac-milan.png",
+          "calciatori": [
+            {
+              "nomeCompleto": "Alisson",
+              "ruolo": "Portiere",
+              "numeroMaglia": 1
+            },
+            {
+              "nomeCompleto": "Caoimhin Kelleher",
+              "ruolo": "Portiere",
+              "numeroMaglia": 62
+            },
+            {
+              "nomeCompleto": "Adrian",
+              "ruolo": "Portiere",
+              "numeroMaglia": 13
+            },
+            {
+              "nomeCompleto": "Ibrahima Konaté",
+              "ruolo": "Difensore",
+              "numeroMaglia": 5
+            },
+            {
+              "nomeCompleto": "Virgil Van Dijk",
+              "ruolo": "Difensore",
+              "numeroMaglia": 4
+            },
+            {
+              "nomeCompleto": "Joe Gomez",
+              "ruolo": "Difensore",
+              "numeroMaglia": 2
+            },
+            {
+              "nomeCompleto": "Jarell Quansah",
+              "ruolo": "Difensore",
+              "numeroMaglia": 78
+            },
+            {
+              "nomeCompleto": "Joel Matip",
+              "ruolo": "Difensore",
+              "numeroMaglia": 32
+            },
+            {
+              "nomeCompleto": "Andrew Robertson",
+              "ruolo": "Difensore",
+              "numeroMaglia": 26
+            },
+            {
+              "nomeCompleto": "Trent Alexander-Arnold",
+              "ruolo": "Difensore",
+              "numeroMaglia": 66
+            },
+            {
+              "nomeCompleto": "Konstantinos Tsimikas",
+              "ruolo": "Difensore",
+              "numeroMaglia": 21
+            },
+            {
+              "nomeCompleto": "Conor Bradley",
+              "ruolo": "Difensore",
+              "numeroMaglia": 84
+            },
+            {
+              "nomeCompleto": "Wataru Endo",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 4
+            },
+            {
+              "nomeCompleto": "Dominik Szoboszlai",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 8
+            },
+            {
+              "nomeCompleto": "Alexis Mac Allister",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 10
+            },
+            {
+              "nomeCompleto": "Curtis Jones",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 17
+            },
+            {
+              "nomeCompleto": "Harvey Elliott",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 19
+            },
+            {
+              "nomeCompleto": "Ryan Gravenberch",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 38
+            },
+            {
+              "nomeCompleto": "Thiago Alcantara",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 6
+            },
+            {
+              "nomeCompleto": "Luis Diaz",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 7
+            },
+            {
+              "nomeCompleto": "Cody Gakpo",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 18
+            },
+            {
+              "nomeCompleto": "Diogo Jota",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 20
+            },
+            {
+              "nomeCompleto": "Mohamed Salah",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 11
+            },
+            {
+              "nomeCompleto": "Darwin Nunez",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 9
             }
           ]
         }
