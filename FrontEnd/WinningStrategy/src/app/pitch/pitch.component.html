@@ -69,17 +69,17 @@
         <div class="container text-center">
           <div class="row">
             <h4 class="text-center mb-4">Panchina</h4>
-            <div class="col-12 bench-player" *ngFor="let panchinaro of panchinaPlayers">
-              <div class="row">
-                <div class="col">
+            <div class="container">
+              <div class="bench-player row d-flex flex-row" *ngFor="let panchinaro of panchinaPlayers">
+                <span class="col-4">
                   {{ panchinaro.ruolo }}
-                </div>
-                <div class="col">
+                </span>
+                <span class="col-4">
                   {{ panchinaro.nomeCompleto }}
-                </div>
-                <div class="col">
+                </span>
+                <span class="col-4">
                   {{ panchinaro.numeroMaglia }}
-                </div>
+                </span>
               </div>
             </div>
           </div>
