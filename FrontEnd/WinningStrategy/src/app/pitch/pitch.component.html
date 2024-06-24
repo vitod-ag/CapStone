@@ -1,8 +1,8 @@
-<div class="container-fluid  my-5">
+<div class="container-fluid my-5">
   <div class="row justify-content-center align-items-center">
     <!-- Sezione Configurazione -->
-    <div class="col-lg-3 col-md-4 col-sm-12">
-      <div class="config-section d-flex flex-column justify-content-between align-items-start mt-4 mb-3 mx-2">
+    <div class="col-lg-3 col-md-12 col-sm-12">
+      <div class="config-section d-flex flex-column align-items-start mt-4 mb-3 mx-2">
         <!-- Sezione Colore -->
         <div class="mb-2">
           <label for="colorSelect" class="form-label">Scegli il colore:</label>&nbsp;&nbsp;&nbsp;
@@ -44,59 +44,45 @@
         </div>
       </div>
       <!-- Pulsante Save in basso a sinistra -->
-      <div class="button-section d-flex align-content-center justify-content-end px-3">
+      <div class="button-section float-end px-3">
         <button class="action_has has_saved" aria-label="save" type="button">
-          <svg
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            stroke-linejoin="round"
-            stroke-linecap="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            fill="none"
-          >
-            <path
-              d="m19,21H5c-1.1,0-2-.9-2-2V5c0-1.1.9-2,2-2h11l5,5v11c0,1.1-.9,2-2,2Z"
-              stroke-linejoin="round"
-              stroke-linecap="round"
-              data-path="box"
-            ></path>
-            <path
-              d="M7 3L7 8L15 8"
-              stroke-linejoin="round"
-              stroke-linecap="round"
-              data-path="line-top"
-            ></path>
-            <path
-              d="M17 20L17 13L7 13L7 20"
-              stroke-linejoin="round"
-              stroke-linecap="round"
-              data-path="line-bottom"
-            ></path>
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" fill="none">
+            <path d="m19,21H5c-1.1,0-2-.9-2-2V5c0-1.1.9-2,2-2h11l5,5v11c0,1.1-.9,2-2,2Z" stroke-linejoin="round" stroke-linecap="round" data-path="box"></path>
+            <path d="M7 3L7 8L15 8" stroke-linejoin="round" stroke-linecap="round" data-path="line-top"></path>
+            <path d="M17 20L17 13L7 13L7 20" stroke-linejoin="round" stroke-linecap="round" data-path="line-bottom"></path>
           </svg>
         </button>
       </div>
     </div>
     <!-- Sezione Campo da Calcio -->
-    <div class=" col-lg-6 col-md-8 col-sm-12">
+    <div class="mt-2 col-lg-5 col-md-12 col-sm-12">
       <div class="pitch-container mx-auto" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
         <img src="../../../assets/img/base_lavagna.png" alt="Campo da calcio" class="pitch">
-        <div class="player" *ngFor="let player of players"
-          [ngStyle]="{'top.%': player.y, 'left.%': player.x, 'background-color': selectedColor}" draggable="true"
-          (dragstart)="onDragStart($event, player)">
+        <div class="player" *ngFor="let player of players" [ngStyle]="{'top.%': player.y, 'left.%': player.x, 'background-color': selectedColor}" draggable="true" (dragstart)="onDragStart($event, player)">
           <div class="player-circle">{{ player.name }}</div>
         </div>
       </div>
     </div>
     <!-- Sezione Panchina -->
-    <div class="col-lg-3 col-md-4 col-sm-12">
+    <div class="col-lg-4 col-md-12 col-sm-12">
       <div class="bench-section mt-4">
-        <h4 class="text-center mb-4">Panchina</h4>
-        <div class="bench-player" *ngFor="let panchianaro of panchinaPlayers">
-          {{panchianaro.ruolo}}&nbsp;{{ panchianaro.nomeCompleto }}&nbsp;{{panchianaro.numeroMaglia}}
+        <div class="container text-center">
+          <div class="row">
+            <h4 class="text-center mb-4">Panchina</h4>
+            <div class="col-12 bench-player" *ngFor="let panchinaro of panchinaPlayers">
+              <div class="row">
+                <div class="col">
+                  {{ panchinaro.ruolo }}
+                </div>
+                <div class="col">
+                  {{ panchinaro.nomeCompleto }}
+                </div>
+                <div class="col">
+                  {{ panchinaro.numeroMaglia }}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
