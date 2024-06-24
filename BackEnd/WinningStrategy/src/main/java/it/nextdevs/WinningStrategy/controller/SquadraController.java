@@ -2,6 +2,7 @@ package it.nextdevs.WinningStrategy.controller;
 
 import it.nextdevs.WinningStrategy.dto.SquadraDto;
 import it.nextdevs.WinningStrategy.exception.BadRequestException;
+import it.nextdevs.WinningStrategy.model.Calciatore;
 import it.nextdevs.WinningStrategy.model.Squadra;
 import it.nextdevs.WinningStrategy.service.SquadraService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,5 +77,11 @@ public class SquadraController {
     @PreAuthorize("hasAuthority('ADMIN')")
     public String deleteSquadra(@PathVariable int id) {
         return squadraService.deleteSquadra(id);
+    }
+
+    @GetMapping("/squadra/{id}/calciatori")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    public List<Calciatore> getCalciatoriBySquadraId(@PathVariable int id) {
+        return squadraService.getCalciatoriBySquadraId(id);
     }
 }

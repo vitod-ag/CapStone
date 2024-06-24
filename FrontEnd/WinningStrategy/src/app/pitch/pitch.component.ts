@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Calciatore } from '../interface/calciatore.interface';
+import { ActivatedRoute } from '@angular/router';
+import { CalciatoreService } from '../service/calciatore.service';
 
 @Component({
     selector: 'app-pitch',
     templateUrl: './pitch.component.html',
     styleUrls: ['./pitch.component.scss'],
 })
-export class PitchComponent {
+export class PitchComponent implements OnInit {
     players = [
         { id: 1, name: 'PT', role: 'Role 1', x: 5, y: 50.2 },
         { id: 2, name: 'TS', role: 'Role 2', x: 22, y: 25 },
@@ -18,50 +21,71 @@ export class PitchComponent {
         { id: 9, name: 'AD', role: 'Role 9', x: 74, y: 80.3 },
         { id: 10, name: 'AS', role: 'Role 10', x: 74, y: 19.2 },
         { id: 11, name: 'ATT', role: 'Role 11', x: 75, y: 50.2 },
-    ];
-
-    selectedColor = 'blue';
-    selectedPlayer = this.players[0];
-    tacticalNotes = '';
-    defaultModule = '4-3-3';
-    previousPositions: any = null;
-    lastMovedPlayer: any = null;
-
-    onDragStart(event: DragEvent, player: any) {
+      ];
+    
+      panchinaPlayers: Calciatore[] = [];
+      selectedColor = 'blue';
+      selectedPlayer = this.players[0];
+      tacticalNotes = '';
+      defaultModule = '4-3-3';
+      previousPositions: any = null;
+      lastMovedPlayer: any = null;
+    
+      constructor(
+        private route: ActivatedRoute,
+        private calciatoreSrv: CalciatoreService
+      ) {}
+    
+      ngOnInit(): void {
+        this.route.queryParams.subscribe((params) => {
+          const squadraId = params['squadraId'];
+          console.log(squadraId);
+          
+          if (squadraId) {
+            this.calciatoreSrv
+              .getCalciatoriBySquadreId(squadraId)
+              .subscribe((data) => {
+                console.log(data);
+                this.panchinaPlayers = data;
+              });
+          }
+        });
+      }
+    
+      onDragStart(event: DragEvent, player: any) {
         event.dataTransfer?.setData('text/plain', JSON.stringify(player));
         this.selectedPlayer = player;
-        this.saveCurrentPosition(player); // Save the current position before starting a new drag
-    }
-
-    onDragOver(event: DragEvent) {
+        this.saveCurrentPosition(player);
+      }
+    
+      onDragOver(event: DragEvent) {
         event.preventDefault();
-    }
-
-    onDrop(event: DragEvent) {
+      }
+    
+      onDrop(event: DragEvent) {
         event.preventDefault();
         const data = event.dataTransfer?.getData('text/plain');
         if (data) {
-            const player = JSON.parse(data);
-            const target = event.target as HTMLElement;
-            const dropX = (event.offsetX / target.clientWidth) * 100;
-            const dropY = (event.offsetY / target.clientHeight) * 100;
-
-            const targetPlayer = this.players.find(
-                (p) => p.id === player.id
-            );
-            if (targetPlayer) {
-                targetPlayer.x = dropX;
-                targetPlayer.y = dropY;
-                this.lastMovedPlayer = targetPlayer; // Update the last moved player
-            }
+          const player = JSON.parse(data);
+          const target = event.target as HTMLElement;
+          const dropX = (event.offsetX / target.clientWidth) * 100;
+          const dropY = (event.offsetY / target.clientHeight) * 100;
+    
+          const targetPlayer = this.players.find((p) => p.id === player.id);
+          if (targetPlayer) {
+            targetPlayer.x = dropX;
+            targetPlayer.y = dropY;
+            this.lastMovedPlayer = targetPlayer;
+          }
         }
-    }
-
-    onModuleChange(event: any) {
+      }
+    
+      onModuleChange(event: any) {
         const module = event.target.value;
-        this.defaultModule = module; // aggiorna il modulo predefinito
+        this.defaultModule = module;
         this.setPlayersForModule(module);
-    }
+      }
+    
 
     setPlayersForModule(module: string) {
         switch (module) {
@@ -140,7 +164,9 @@ export class PitchComponent {
 
     restorePreviousPosition() {
         if (this.previousPositions) {
-            const player = this.players.find(p => p.id === this.previousPositions.id);
+            const player = this.players.find(
+                (p) => p.id === this.previousPositions.id
+            );
             if (player) {
                 player.x = this.previousPositions.x;
                 player.y = this.previousPositions.y;

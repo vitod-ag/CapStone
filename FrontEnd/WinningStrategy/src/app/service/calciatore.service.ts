@@ -3,6 +3,7 @@ import { environment } from '../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Squadra } from '../interface/squadra.interface';
+import { Calciatore } from '../interface/calciatore.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class CalciatoreService {
 
   constructor(private http: HttpClient) {}
   
-  getSquadre(campionatoId: number): Observable<Squadra[]> {
-    return this.http.get<Squadra[]>(`${this.apiUrl}campionato/${campionatoId}/squadre`);
+  getCalciatoriBySquadreId(squadreId: number): Observable<Calciatore[]> {
+    return this.http.get<Calciatore[]>(`${this.apiUrl}squadra/${squadreId}/calciatori`);
   }
 }

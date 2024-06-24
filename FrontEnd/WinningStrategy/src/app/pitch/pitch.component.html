@@ -1,8 +1,8 @@
-<div class="container-fluid text-center my-5">
+<div class="container-fluid  my-5">
   <div class="row justify-content-center align-items-center">
     <!-- Sezione Configurazione -->
     <div class="col-lg-3 col-md-4 col-sm-12">
-      <div class="config-section d-flex flex-column justify-content-between align-items-center mt-4 mb-3 mx-5">
+      <div class="config-section d-flex flex-column justify-content-between align-items-start mt-4 mb-3 mx-2">
         <!-- Sezione Colore -->
         <div class="mb-2">
           <label for="colorSelect" class="form-label">Scegli il colore:</label>&nbsp;&nbsp;&nbsp;
@@ -24,7 +24,7 @@
           </select>
         </div>
         <!-- Sezione Pulsanti Reset e Ultima Mossa -->
-        <div class="button-section mt-4 d-flex flex-column ">
+        <div class="button-section mt-4 d-flex flex-row justify-content-start ps-0 ms-0">
           <button class="btn reset-btn mb-2" (click)="resetPositions()">
             <b><i class="bi bi-arrow-return-left"></i>&nbsp;Reset</b>
           </button>
@@ -44,18 +44,44 @@
         </div>
       </div>
       <!-- Pulsante Save in basso a sinistra -->
-      <div class="button-section d-flex align-content-center justify-content-center">
-        <button class="Btn save-btn" id="saveButton">
-          <svg class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg">
-            <path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path>
+      <div class="button-section d-flex align-content-center justify-content-end px-3">
+        <button class="action_has has_saved" aria-label="save" type="button">
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            fill="none"
+          >
+            <path
+              d="m19,21H5c-1.1,0-2-.9-2-2V5c0-1.1.9-2,2-2h11l5,5v11c0,1.1-.9,2-2,2Z"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              data-path="box"
+            ></path>
+            <path
+              d="M7 3L7 8L15 8"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              data-path="line-top"
+            ></path>
+            <path
+              d="M17 20L17 13L7 13L7 20"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              data-path="line-bottom"
+            ></path>
           </svg>
-          <span class="icon2"></span>
-          <span class="tooltip">Save!</span>
         </button>
       </div>
     </div>
     <!-- Sezione Campo da Calcio -->
-    <div class="col-lg-6 col-md-8 col-sm-12">
+    <div class=" col-lg-6 col-md-8 col-sm-12">
       <div class="pitch-container mx-auto" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
         <img src="../../../assets/img/base_lavagna.png" alt="Campo da calcio" class="pitch">
         <div class="player" *ngFor="let player of players"
@@ -69,7 +95,9 @@
     <div class="col-lg-3 col-md-4 col-sm-12">
       <div class="bench-section mt-4">
         <h4 class="text-center mb-4">Panchina</h4>
-        <!-- Aggiungi qui i giocatori della panchina -->
+        <div class="bench-player" *ngFor="let panchianaro of panchinaPlayers">
+          {{panchianaro.ruolo}}&nbsp;{{ panchianaro.nomeCompleto }}&nbsp;{{panchianaro.numeroMaglia}}
+        </div>
       </div>
     </div>
   </div>

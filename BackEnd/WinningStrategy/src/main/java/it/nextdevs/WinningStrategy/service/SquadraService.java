@@ -3,6 +3,7 @@ package it.nextdevs.WinningStrategy.service;
 import com.cloudinary.Cloudinary;
 import it.nextdevs.WinningStrategy.dto.SquadraDto;
 import it.nextdevs.WinningStrategy.exception.NotFoundException;
+import it.nextdevs.WinningStrategy.model.Calciatore;
 import it.nextdevs.WinningStrategy.model.Campionato;
 import it.nextdevs.WinningStrategy.model.Squadra;
 import it.nextdevs.WinningStrategy.repository.CampionatoRepository;
@@ -98,5 +99,15 @@ public class SquadraService {
 
     public List<Squadra> getSquadreByCampionato( Integer campionatoId ) {
         return squadraRepository.findByCampionatiId(campionatoId);
+    }
+
+    public List<Calciatore> getCalciatoriBySquadraId( Integer id ) {
+        Optional<Squadra> squadraOptional = getSquadraById(id);
+        if (squadraOptional.isPresent()) {
+            Squadra squadra = squadraOptional.get();
+            return squadra.getCalciatori();
+        } else {
+            throw new NotFoundException("La squadra con id: " + id + " non è presente");
+        }
     }
 }
