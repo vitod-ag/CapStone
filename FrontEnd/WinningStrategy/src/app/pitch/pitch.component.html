@@ -15,7 +15,7 @@
         </div>
         <!-- Sezione Modulo -->
         <div class="mb-2">
-          <label for="moduleSelect" class="form-label">Scegli il modulo:</label>&nbsp;
+          <label for="moduleSelect" class="form-label">Guarda i moduli più usati:</label>&nbsp;
           <select id="moduleSelect" class="form-select" (change)="onModuleChange($event)">
             <option value="4-3-3">&nbsp;4-3-3&nbsp; (Offensivo)</option>
             <option value="4-4-2">&nbsp;4-4-2&nbsp; (Equilibrio)</option>
@@ -56,7 +56,7 @@
     </div>
     
     <!-- Sezione Campo da Calcio -->
-    <div class="mt-2 col-lg-5 col-md-12 col-sm-12">
+    <div class="mt-2 col-lg-6 col-md-12 col-sm-12">
       <div class="pitch-container mx-auto" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
         <img src="../../../assets/img/base_lavagna.png" alt="Campo da calcio" class="pitch">
         <div class="player" *ngFor="let player of players" [ngStyle]="{'top.%': player.y, 'left.%': player.x, 'background-color': selectedColor}" draggable="true" (dragstart)="onDragStart($event, player)" (dblclick)="removePlayer(player)">
@@ -66,14 +66,14 @@
       </div>
     </div>
     <!-- Sezione Panchina -->
-    <div class="col-lg-4 col-md-12 col-sm-12">
+    <div class="col-lg-3 col-md-12 col-sm-12">
       <div class="bench-section mt-4">
         <div class="container text-center">
-          <div class="row">
-            <h4 class="text-center mb-4">Rosa della Squadra</h4>
+          <div class="row ">
+            <h4 class="text-center mb-4 border-bottom border-2">Rosa della Squadra</h4>
             <div class="container">
               <div class="mb-3">
-                <label for="panchinaSelectGoalkeeper" class="form-label">Scegli un portiere dalla rosa:</label>
+                <label for="panchinaSelectGoalkeeper" class="form-label">Scegli un <b>portiere</b> dalla rosa:</label><br>
                 <select id="panchinaSelectGoalkeeper" class="form-select" [(ngModel)]="selectedGoalkeeper" (change)="onPanchinaPlayerChange($event, 'portiere'); portiere.selectedIndex=0"#portiere>
                   <option value="">Seleziona un portiere</option>
                   <option *ngFor="let panchinaro of goalkeepers" [value]="panchinaro.id">
@@ -82,7 +82,7 @@
                 </select>
               </div>
               <div class="mb-3">
-                <label for="panchinaSelectDefender" class="form-label">Scegli un difensore dalla rosa:</label>
+                <label for="panchinaSelectDefender" class="form-label">Scegli un <b>difensore</b> dalla rosa:</label><br>
                 <select id="panchinaSelectDefender" class="form-select" [(ngModel)]="selectedDefender" (change)="onPanchinaPlayerChange($event, 'difensore'); difensore.selectedIndex=0"#difensore>
                   <option value="">Seleziona un difensore</option>
                   <option *ngFor="let panchinaro of defenders" [value]="panchinaro.id">
@@ -91,7 +91,7 @@
                 </select>
               </div>
               <div class="mb-3">
-                <label for="panchinaSelectMidfielder" class="form-label">Scegli un centrocampista dalla rosa:</label>
+                <label for="panchinaSelectMidfielder" class="form-label">Scegli un <b>centrocampista</b> dalla rosa:</label><br>
                 <select id="panchinaSelectMidfielder" class="form-select" [(ngModel)]="selectedMidfielder" (change)="onPanchinaPlayerChange($event, 'centrocampista'); centrocampista.selectedIndex=0"#centrocampista>
                   <option value="">Seleziona un centrocampista</option>
                   <option *ngFor="let panchinaro of midfielders" [value]="panchinaro.id">
@@ -100,7 +100,7 @@
                 </select>
               </div>
               <div class="mb-3">
-                <label for="panchinaSelectForward" class="form-label">Scegli un attaccante dalla rosa:</label>
+                <label for="panchinaSelectForward" class="form-label">Scegli un <b>attaccante</b> dalla rosa:</label><br>
                 <select id="panchinaSelectForward" class="form-select" [(ngModel)]="selectedForward" (change)="onPanchinaPlayerChange($event, 'attaccante'); attaccante.selectedIndex=0"#attaccante>
                   <option value="">Seleziona un attaccante</option>
                   <option *ngFor="let panchinaro of forwards" [value]="panchinaro.id">
