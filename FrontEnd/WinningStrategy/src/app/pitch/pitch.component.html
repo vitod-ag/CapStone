@@ -26,7 +26,7 @@
         <!-- Sezione Pulsanti Reset e Ultima Mossa -->
         <div class="button-section mt-4 d-flex flex-row justify-content-start ps-0 ms-0">
           <button class="btn reset-btn mb-2" (click)="resetPositions()">
-            <b><i class="bi bi-arrow-return-left"></i>&nbsp;Reset</b>
+            <b><i class="bi bi-arrow-repeat"></i>&nbsp;Reset</b>
           </button>
           <button class="btn restore-btn mb-2" (click)="restorePreviousPosition()">
             <b><i class="bi bi-arrow-clockwise"></i>&nbsp;Ultima mossa</b>
@@ -45,7 +45,7 @@
       </div>
       <!-- Pulsante Save in basso a sinistra -->
       <div class="button-section float-end px-3">
-        <button class="action_has has_saved" aria-label="save" type="button">
+        <button class="action_has has_saved" aria-label="save" type="button" (click)="save()">
           <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" fill="none">
             <path d="m19,21H5c-1.1,0-2-.9-2-2V5c0-1.1.9-2,2-2h11l5,5v11c0,1.1-.9,2-2,2Z" stroke-linejoin="round" stroke-linecap="round" data-path="box"></path>
             <path d="M7 3L7 8L15 8" stroke-linejoin="round" stroke-linecap="round" data-path="line-top"></path>
@@ -54,13 +54,15 @@
         </button>
       </div>
     </div>
+    
     <!-- Sezione Campo da Calcio -->
     <div class="mt-2 col-lg-5 col-md-12 col-sm-12">
       <div class="pitch-container mx-auto" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
         <img src="../../../assets/img/base_lavagna.png" alt="Campo da calcio" class="pitch">
-        <div class="player" *ngFor="let player of players" [ngStyle]="{'top.%': player.y, 'left.%': player.x, 'background-color': selectedColor}" draggable="true" (dragstart)="onDragStart($event, player)">
+        <div class="player" *ngFor="let player of players" [ngStyle]="{'top.%': player.y, 'left.%': player.x, 'background-color': selectedColor}" draggable="true" (dragstart)="onDragStart($event, player)" (dblclick)="removePlayer(player)">
           <div class="player-circle">{{ player.name }}</div>
         </div>
+        <button class="back-button my-2 float-end" (click)="navigateToTeamSelection()"><i class="bi bi-arrow-return-left"></i>&nbsp;Torna alla scelta della squadra</button>
       </div>
     </div>
     <!-- Sezione Panchina -->
@@ -68,18 +70,43 @@
       <div class="bench-section mt-4">
         <div class="container text-center">
           <div class="row">
-            <h4 class="text-center mb-4">Panchina</h4>
+            <h4 class="text-center mb-4">Rosa della Squadra</h4>
             <div class="container">
-              <div class="bench-player row d-flex flex-row" *ngFor="let panchinaro of panchinaPlayers">
-                <span class="col-4">
-                  {{ panchinaro.ruolo }}
-                </span>
-                <span class="col-4">
-                  {{ panchinaro.nomeCompleto }}
-                </span>
-                <span class="col-4">
-                  {{ panchinaro.numeroMaglia }}
-                </span>
+              <div class="mb-3">
+                <label for="panchinaSelectGoalkeeper" class="form-label">Scegli un portiere dalla rosa:</label>
+                <select id="panchinaSelectGoalkeeper" class="form-select" [(ngModel)]="selectedGoalkeeper" (change)="onPanchinaPlayerChange($event, 'portiere'); portiere.selectedIndex=0"#portiere>
+                  <option value="">Seleziona un portiere</option>
+                  <option *ngFor="let panchinaro of goalkeepers" [value]="panchinaro.id">
+                    {{ panchinaro.nomeCompleto }}
+                  </option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="panchinaSelectDefender" class="form-label">Scegli un difensore dalla rosa:</label>
+                <select id="panchinaSelectDefender" class="form-select" [(ngModel)]="selectedDefender" (change)="onPanchinaPlayerChange($event, 'difensore'); difensore.selectedIndex=0"#difensore>
+                  <option value="">Seleziona un difensore</option>
+                  <option *ngFor="let panchinaro of defenders" [value]="panchinaro.id">
+                    {{ panchinaro.nomeCompleto }}
+                  </option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="panchinaSelectMidfielder" class="form-label">Scegli un centrocampista dalla rosa:</label>
+                <select id="panchinaSelectMidfielder" class="form-select" [(ngModel)]="selectedMidfielder" (change)="onPanchinaPlayerChange($event, 'centrocampista'); centrocampista.selectedIndex=0"#centrocampista>
+                  <option value="">Seleziona un centrocampista</option>
+                  <option *ngFor="let panchinaro of midfielders" [value]="panchinaro.id">
+                    {{ panchinaro.nomeCompleto }}
+                  </option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="panchinaSelectForward" class="form-label">Scegli un attaccante dalla rosa:</label>
+                <select id="panchinaSelectForward" class="form-select" [(ngModel)]="selectedForward" (change)="onPanchinaPlayerChange($event, 'attaccante'); attaccante.selectedIndex=0"#attaccante>
+                  <option value="">Seleziona un attaccante</option>
+                  <option *ngFor="let panchinaro of forwards" [value]="panchinaro.id">
+                    {{ panchinaro.nomeCompleto }}
+                  </option>
+                </select>
               </div>
             </div>
           </div>

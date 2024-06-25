@@ -41,6 +41,21 @@ body {
   font-family: "Monoton", sans-serif;
 }
 
+.back-button {
+  padding: 10px 20px;
+  background-color: #e09e05;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.back-button:hover {
+  background-color: #FCA311;
+}
+
 .form-select {
   width: auto;
   display: inline-block;

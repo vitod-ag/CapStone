@@ -1,0 +1,23 @@
+<div class="container">
+  <h2 class="my-4">Dati Salvati</h2>
+
+  <div *ngIf="savedData">
+    <h4 class="mb-3">Giocatori Posizionati:</h4>
+    <ul>
+      <li *ngFor="let player of savedData.players">
+        {{ player.nomeCompleto }} - {{ player.ruolo }} - Posizione: {{ player.x }}%, {{ player.y }}%
+      </li>
+    </ul>
+
+    <h4 class="my-3">Note Tattiche:</h4>
+    <p>{{ savedData.noteTattiche }}</p>
+
+    <button class="btn btn-primary me-2" (click)="clearSavedData()">Cancella Salvataggio</button>
+    <button class="btn btn-primary" (click)="goBack()">Torna al Campo</button>
+  </div>
+
+  <div *ngIf="!savedData">
+    <p>Nessun dato salvato trovato.</p>
+    <button class="btn btn-primary" (click)="goBack()">Torna al Campo</button>
+  </div>
+</div>

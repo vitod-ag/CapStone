@@ -21,6 +21,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GoogleLoginComponent } from './components/dashboard/google-login/google-login.component';
 import { SceltaSquadraComponent } from './components/home/scelta-squadra/scelta-squadra.component';
+import { SalvatiComponent } from './components/home/salvati/salvati.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SceltaSquadraComponent } from './components/home/scelta-squadra/scelta-
     Error404Component,
     DashboardComponent,
     GoogleLoginComponent,
-    SceltaSquadraComponent
+    SceltaSquadraComponent,
+    SalvatiComponent
   ],
   imports: [
     BrowserModule,
