@@ -14,23 +14,15 @@ import it.nextdevs.WinningStrategy.repository.UserRepository;
 import it.nextdevs.WinningStrategy.security.JwtTool;
 import it.nextdevs.WinningStrategy.service.PasswordGenerator;
 import it.nextdevs.WinningStrategy.service.UserService;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientService;
-import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.view.RedirectView;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.Collections;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 
 @RestController
@@ -49,38 +41,6 @@ public class OAuth2Controller {
     public OAuth2Controller(OAuth2AuthorizedClientService clientService) {
         this.clientService = clientService;
     }
-
-//    @GetMapping("/auth/login/oauth2/code/{provider}")
-//    public Integer loginSuccess(@PathVariable String provider,@AuthenticationPrincipal OAuth2AuthenticationToken authenticationToken) {
-//
-//        OAuth2AuthorizedClient client = clientService.loadAuthorizedClient(
-//                authenticationToken.getAuthorizedClientRegistrationId(),
-//                authenticationToken.getName()
-//        );
-//
-//        Map<String, Object> attributes = authenticationToken.getPrincipal().getAttributes();
-//        String userEmail = (String) attributes.get("email");
-//
-//        Optional<User> existingUser = userRepository.findByEmail(userEmail);
-//        if (existingUser.isEmpty()) {
-//            UserDto userDto = new UserDto();
-//            userDto.setEmail(userEmail);
-//            userDto.setPassword(PasswordGenerator.generatePassword(32));
-//            userDto.setUsername(userEmail);
-//            userDto.setProvider(provider);
-//            if (Objects.equals(provider, "Google")) {
-//                userDto.setNome((String) attributes.get("given_name"));
-//                userDto.setCognome((String) attributes.get("family_name"));
-//            } else if (Objects.equals(provider, "Facebook")) {
-//                userDto.setNome((String) attributes.get("first_name"));
-//                userDto.setCognome((String) attributes.get("last_name"));
-//            }
-//            userDto.setNewsletter(false);
-//            return userService.saveUser(userDto);
-//        } else {
-//            return existingUser.get().getIdUtente();
-//        }
-//    }
 
     @PostMapping("/auth/login/oauth2/code/{provider}")
     public AuthDataDto loginSuccess(@PathVariable String provider, @RequestBody Map<String, String> request) throws GeneralSecurityException, IOException {
@@ -110,7 +70,6 @@ public class OAuth2Controller {
                 userDto.setAvatar(pictureUrl);
                 userDto.setNome(name);
                 userDto.setCognome(surname);
-//                userDto.setNewsletter(false);
                 AuthDataDto authDataDto = new AuthDataDto();
                 Integer id = userService.saveUser(userDto);
                 utenteOptional = userService.getUserById(id);
@@ -119,7 +78,6 @@ public class OAuth2Controller {
                     User utente = utenteOptional.get();
                     userDataDto.setAvatar(utente.getAvatar());
                     userDataDto.setNome(utente.getNome());
-                    //userDataDto.setNewsletter(utente.isNewsletter());
                     userDataDto.setEmail(utente.getEmail());
                     userDataDto.setCognome(utente.getCognome());
                     userDataDto.setIdUtente(utente.getIdUtente());
@@ -137,7 +95,6 @@ public class OAuth2Controller {
                 User utente = utenteOptional.get();
                 userDataDto.setAvatar(utente.getAvatar());
                 userDataDto.setNome(utente.getNome());
-               // userDataDto.setNewsletter(utente.isNewsletter());
                 userDataDto.setEmail(utente.getEmail());
                 userDataDto.setCognome(utente.getCognome());
                 userDataDto.setIdUtente(utente.getIdUtente());
@@ -150,41 +107,7 @@ public class OAuth2Controller {
         } else {
             throw new BadRequestException("Token Google non valido");
         }
-//        System.out.println(authenticationToken);
-//        if (authenticationToken == null) {
-//            // Handle the case where authenticationToken is null
-//            throw new IllegalStateException("Authentication token is missing.");
-//        }
 
-//        OAuth2AuthorizedClient client = clientService.loadAuthorizedClient(
-//                authenticationToken.getAuthorizedClientRegistrationId(),
-//                authenticationToken.getName()
-//        );
-//
-//        Map<String, Object> attributes = authenticationToken.getPrincipal().getAttributes();
-//        String userEmail = (String) attributes.get("email");
-//
-//        Optional<User> existingUser = userRepository.findByEmail(userEmail);
-//        if (existingUser.isEmpty()) {
-//            UserDto userDto = new UserDto();
-//            userDto.setEmail(userEmail);
-//            userDto.setPassword(PasswordGenerator.generatePassword(32));
-//            userDto.setUsername(userEmail);
-//            userDto.setProvider(provider);
-//            if (Objects.equals(provider, "Google")) {
-//                userDto.setNome((String) attributes.get("given_name"));
-//                userDto.setCognome((String) attributes.get("family_name"));
-//            } else if (Objects.equals(provider, "Facebook")) {
-//                userDto.setNome((String) attributes.get("first_name"));
-//                userDto.setCognome((String) attributes.get("last_name"));
-//            }
-//            userDto.setNewsletter(false);
-//            return userService.saveUser(userDto);
-//        } else {
-//            return existingUser.get().getIdUtente();
-//        }
     }
-
-
 }
 
