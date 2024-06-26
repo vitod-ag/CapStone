@@ -158,6 +158,7 @@ export class PitchComponent implements OnInit {
   removePlayer(player: any) {
     this.players = this.players.filter((p) => p.id !== player.id);
     this.resetSelect(player.role.toLowerCase());
+    this.selectedPlayer.name='';
   }
 
   resetSelect(role: string) {

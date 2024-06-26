@@ -77,7 +77,7 @@
                 <select id="panchinaSelectGoalkeeper" class="form-select" [(ngModel)]="selectedGoalkeeper" (change)="onPanchinaPlayerChange($event, 'portiere'); portiere.selectedIndex=0"#portiere>
                   <option value="">Seleziona un portiere</option>
                   <option *ngFor="let panchinaro of goalkeepers" [value]="panchinaro.id">
-                    {{ panchinaro.nomeCompleto }}
+                    {{ panchinaro.nomeCompleto }} #&nbsp;{{ panchinaro.numeroMaglia}}
                   </option>
                 </select>
               </div>
@@ -86,7 +86,7 @@
                 <select id="panchinaSelectDefender" class="form-select" [(ngModel)]="selectedDefender" (change)="onPanchinaPlayerChange($event, 'difensore'); difensore.selectedIndex=0"#difensore>
                   <option value="">Seleziona un difensore</option>
                   <option *ngFor="let panchinaro of defenders" [value]="panchinaro.id">
-                    {{ panchinaro.nomeCompleto }}
+                    {{ panchinaro.nomeCompleto }} #&nbsp;{{ panchinaro.numeroMaglia}}
                   </option>
                 </select>
               </div>
@@ -95,7 +95,7 @@
                 <select id="panchinaSelectMidfielder" class="form-select" [(ngModel)]="selectedMidfielder" (change)="onPanchinaPlayerChange($event, 'centrocampista'); centrocampista.selectedIndex=0"#centrocampista>
                   <option value="">Seleziona un centrocampista</option>
                   <option *ngFor="let panchinaro of midfielders" [value]="panchinaro.id">
-                    {{ panchinaro.nomeCompleto }}
+                    {{ panchinaro.nomeCompleto }} #&nbsp;{{ panchinaro.numeroMaglia}}
                   </option>
                 </select>
               </div>
