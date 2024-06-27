@@ -1,7 +1,10 @@
 package it.nextdevs.WinningStrategy.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -17,4 +20,9 @@ public class Calciatore {
     @ManyToOne
     @JoinColumn(name = "squadra_id")
     private Squadra squadra;
+
+    @OneToMany(mappedBy = "calciatore")
+    @JsonIgnore
+    private List<GiocatoriPosizionati> giocatoriPosizionatiList;
+
 }
