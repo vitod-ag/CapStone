@@ -11,114 +11,95 @@ body {
 }
 
 .container {
-  background-color: #E5E5E5 !important;
+  background-color: #e5e5e5 !important;
   background-image: url(../../../../assets/img/sfondo_tattica.png);
-  background-blend-mode: overlay;
-  background-size: cover; /* Questa proprietà farà sì che l'immagine copra l'intero container */
-  background-position: center; /* Centra l'immagine */
-  background-repeat: no-repeat; /* Evita che l'immagine si ripeta */
-  min-height: 100vh; /* Assicura che il container copra l'intera altezza della viewport */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.frame-large {
-  padding: 40px;
-  background-color: rgba(255, 255, 255, 0.8); /* Aggiungi uno sfondo bianco semi-trasparente al frame */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiungi un'ombra leggera */
-}
-
-
-.container-overlay {
-  position: relative;
-  z-index: 1;
+.container .col-12 {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   width: 100%;
-  height: 100%;
+  max-width: 800px;
 }
 
-.container-form {
-  background-color: #e5e5e5;
+.container .col-12 h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e5a641;
+  text-shadow: 2px 2px 2px rgb(0, 0, 0); 
+}
+
+
+
+.container .col-12 form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container .col-12 form .form-group {
+  margin: 0 10px;
+  flex: 1 1 calc(50% - 20px); 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center; 
+}
+
+.container .col-12 form .form-group label {
+  color: #e5a641;
+  margin-bottom: 5px;
+  width: 100%;
+  max-width: 120px; 
+  margin-top: 15px;
+  text-align: center; 
+}
+
+.container .col-12 form .form-control {
+  border: 2.5px solid #14213d;
+  width: 100%; 
+  max-width: 200px; 
+}
+
+.container .col-12 form .btn-primary {
+  background-color: #fca311;
+  border-color: #000000;
+  color: #fff;
+  width: 100%; 
+  max-width: 200px; 
+  font-size: 1.2rem;
+  font-weight: bold;
   border-radius: 15px;
-  padding: 40px; /* Aumentato il padding */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 800px; /* Aumentato la larghezza massima */
-  width: 100%;
-  z-index: 2;
 }
 
-.form-group label {
-  color: #14213D;
-}
-
-.form-control {
-  border: 2.5px solid #14213D;
-}
-
-.btn-primary {
-  background-color: #FCA311;
-  border-color: #FCA311;
-  color: #FFFFFF;
-}
-
-.btn-primary:disabled {
+.container .col-12 form .btn-primary:disabled {
   background-color: #e5a641;
   color: #000000;
   border: 2px solid #000;
   font-size: 1.2rem;
   font-weight: bold;
   border-radius: 15px;
-  padding: 0.5rem 1.2rem;
   transition: background-color 0.3s, border-color 0.3s;
   text-decoration: none;
   margin-top: 1.5rem;
+  width: 100%; 
+  max-width: 200px; 
 }
 
-@media (max-width: 768px) {
-  .container-form {
-    padding: 20px; /* Aumentato il padding */
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .form-group {
-    width: 100%;
-    margin-right: 0;
-    margin-left: 0;
+@media (max-width: 932px) {
+  .container .col-12 form .form-group label {
+    width: auto; 
+    max-width: 100%; 
+    text-align: center; 
   }
 }
-
-@media (max-width: 576px) {
-  .container-form {
-    padding: 10px; /* Aumentato il padding */
-  }
-
-  h2 {
-    font-size: 1.25rem;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .form-group {
-    width: 100%;
-    margin-right: 0;
-    margin-left: 0;
-  }
-}
-
-.frame {
-  background-color: #FFFFFF;
-  border: 1px solid #14213D;
-  height: 180px;
-}
-
-

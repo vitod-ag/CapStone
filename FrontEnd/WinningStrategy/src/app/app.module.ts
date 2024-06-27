@@ -22,7 +22,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GoogleLoginComponent } from './components/dashboard/google-login/google-login.component';
 import { SceltaSquadraComponent } from './components/home/scelta-squadra/scelta-squadra.component';
 import { SalvatiComponent } from './components/home/salvati/salvati.component';
-import { MyinfoComponent } from './components/dashboard/myinfo/myinfo.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +36,7 @@ import { MyinfoComponent } from './components/dashboard/myinfo/myinfo.component'
     DashboardComponent,
     GoogleLoginComponent,
     SceltaSquadraComponent,
-    SalvatiComponent,
-    MyinfoComponent
+    SalvatiComponent
   ],
   imports: [
     BrowserModule,
