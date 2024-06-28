@@ -180,10 +180,10 @@ export class PitchComponent implements OnInit {
 
   onPanchinaPlayerChange(event: any, role: string) {
     const playerId = event.target.value;
-    const selectedPanchinaro = this.panchinaPlayers.find((p) => p.id == Number(playerId)); 
+    const selectedPanchinaro = this.panchinaPlayers.find((p) => p.id == Number(playerId)); // Convertire playerId a numero
 
     if (selectedPanchinaro) {
-      const playerIndex = this.players.findIndex((p) => p.ruolo === role);
+      const playerIndex = this.players.findIndex((p) => p.ruolo === role && !p.id);
       if (playerIndex !== -1) {
         this.players[playerIndex] = {
           ...this.players[playerIndex],
