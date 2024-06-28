@@ -666,6 +666,148 @@
           ]
         }
       ]
+    },
+    {
+      "nome": "EURO 2024",
+      "logo": "url_logo_premier_league",
+      "squadre": [
+        {
+          "nome": "Italia",
+          "logo": "url_logo_arsenal",
+          "calciatori": [
+            {
+              "nomeCompleto": "G.Donnarumma",
+              "ruolo": "Portiere",
+              "numeroMaglia": 1
+            },
+            {
+              "nomeCompleto": "G.Vicario",
+              "ruolo": "Portiere",
+              "numeroMaglia": 12
+            },
+            {
+              "nomeCompleto": "A.Meret",
+              "ruolo": "Portiere",
+              "numeroMaglia": 26
+            },
+            {
+              "nomeCompleto": "A.Bastoni",
+              "ruolo": "Difensore",
+              "numeroMaglia": 23
+            },
+            {
+              "nomeCompleto": "A.Buongiorno",
+              "ruolo": "Difensore",
+              "numeroMaglia": 4
+            },
+            {
+              "nomeCompleto": "R.Calafiori",
+              "ruolo": "Difensore",
+              "numeroMaglia": 5
+            },
+            {
+              "nomeCompleto": "G.Mancini",
+              "ruolo": "Difensore",
+              "numeroMaglia": 17
+            },
+            {
+              "nomeCompleto": "F.Gatti",
+              "ruolo": "Difensore",
+              "numeroMaglia": 6
+            },
+            {
+              "nomeCompleto": "F.Dimarco",
+              "ruolo": "Difensore",
+              "numeroMaglia": 4
+            },
+            {
+              "nomeCompleto": "A.Cambiaso",
+              "ruolo": "Difensore",
+              "numeroMaglia": 24
+            },
+            {
+              "nomeCompleto": "G.Di Lorenzo",
+              "ruolo": "Difensore",
+              "numeroMaglia": 2
+            },
+            {
+              "nomeCompleto": "R.Bellanova",
+              "ruolo": "Difensore",
+              "numeroMaglia": 15
+            },
+            {
+              "nomeCompleto": "M.Darmian",
+              "ruolo": "Difensore",
+              "numeroMaglia": 13
+            },
+            {
+              "nomeCompleto": "Jorginho",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 8
+            },
+            {
+              "nomeCompleto": "B.Cristante",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 16
+            },
+            {
+              "nomeCompleto": "N.Barella",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 18
+            },
+            {
+              "nomeCompleto": "D.Frattesi",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 7
+            },
+            {
+              "nomeCompleto": "N.Fagioli",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 21
+            },
+            {
+              "nomeCompleto": "M.Folorunsho",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 25
+            },
+            {
+              "nomeCompleto": "L.Pellegrini",
+              "ruolo": "Centrocampista",
+              "numeroMaglia": 10
+            },
+            {
+              "nomeCompleto": "F.Chiesa",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 14
+            },
+            {
+              "nomeCompleto": "M.Zaccagni",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 20
+            },
+            {
+              "nomeCompleto": "S.El Shaarawy",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 22
+            },
+            {
+              "nomeCompleto": "G.Raspadori",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 11
+            },
+            {
+              "nomeCompleto": "G.Scamacca",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 9
+            },
+            {
+              "nomeCompleto": "M.Retegui",
+              "ruolo": "Attaccante",
+              "numeroMaglia": 19
+            }
+          ]
+        }
+      ]
     }
   ]
 }

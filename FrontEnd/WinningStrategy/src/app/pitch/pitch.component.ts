@@ -12,7 +12,6 @@ import { SalvatiService } from '../service/salvati.service';
 })
 export class PitchComponent implements OnInit {
   players: any[] = [];
-
   panchinaPlayers: Calciatore[] = [];
   goalkeepers: Calciatore[] = [];
   defenders: Calciatore[] = [];
@@ -95,7 +94,108 @@ export class PitchComponent implements OnInit {
   }
 
   setPlayersForModule(module: string) {
-    // Implementa questa funzione se necessario
+    this.players = [];
+    switch (module) {
+      case '4-3-3':
+        this.players = this.createInitialPlayersFor433();
+        break;
+      case '4-4-2':
+        this.players = this.createInitialPlayersFor442();
+        break;
+      case '5-4-1':
+        this.players = this.createInitialPlayersFor541();
+        break;
+      case '3-5-2':
+        this.players = this.createInitialPlayersFor352();
+        break;
+      default:
+        this.players = [];
+        break;
+    }
+  }
+
+  createInitialPlayersFor433() {
+    return [
+      { ruolo: 'Portiere', x: 10, y: 50, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 30, y: 30, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 30, y: 50, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 30, y: 70, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 30, y: 90, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 30, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 50, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 70, color: this.selectedColor },
+      { ruolo: 'Attaccante', x: 70, y: 30, color: this.selectedColor },
+      { ruolo: 'Attaccante', x: 70, y: 50, color: this.selectedColor },
+      { ruolo: 'Attaccante', x: 70, y: 70, color: this.selectedColor }
+    ];
+  }
+
+  createInitialPlayersFor442() {
+    return [
+      { ruolo: 'Portiere', x: 10, y: 50, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 30, y: 30, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 30, y: 50, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 30, y: 70, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 30, y: 90, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 20, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 40, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 60, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 80, color: this.selectedColor },
+      { ruolo: 'Attaccante', x: 70, y: 40, color: this.selectedColor },
+      { ruolo: 'Attaccante', x: 70, y: 60, color: this.selectedColor }
+    ];
+  }
+
+  createInitialPlayersFor541() {
+    return [
+      { ruolo: 'Portiere', x: 10, y: 50, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 30, y: 20, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 30, y: 40, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 30, y: 60, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 30, y: 80, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 30, y: 90, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 20, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 40, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 60, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 80, color: this.selectedColor },
+      { ruolo: 'Attaccante', x: 70, y: 50, color: this.selectedColor }
+    ];
+  }
+
+  createInitialPlayersFor352() {
+    return [
+      { ruolo: 'Portiere', x: 10, y: 50, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 30, y: 30, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 30, y: 50, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 30, y: 70, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 20, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 40, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 60, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 80, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 90, color: this.selectedColor },
+      { ruolo: 'Attaccante', x: 70, y: 40, color: this.selectedColor },
+      { ruolo: 'Attaccante', x: 70, y: 60, color: this.selectedColor }
+    ];
+  }
+
+  onPanchinaPlayerChange(event: any, role: string) {
+    const playerId = event.target.value;
+    const selectedPanchinaro = this.panchinaPlayers.find((p) => p.id == Number(playerId)); 
+
+    if (selectedPanchinaro) {
+      const playerIndex = this.players.findIndex((p) => p.ruolo === role);
+      if (playerIndex !== -1) {
+        this.players[playerIndex] = {
+          ...this.players[playerIndex],
+          id: selectedPanchinaro.id,
+          nomeCompleto: selectedPanchinaro.nomeCompleto,
+          ruolo: selectedPanchinaro.ruolo,
+          numeroMaglia: selectedPanchinaro.numeroMaglia,
+          color: this.selectedColor
+        };
+      }
+      this.resetSelect(role);
+    }
   }
 
   saveCurrentPosition(player: any) {
@@ -103,7 +203,6 @@ export class PitchComponent implements OnInit {
   }
 
   resetPositions() {
-    // Resetta l'array players vuoto
     this.players = [];
   }
 
@@ -117,52 +216,12 @@ export class PitchComponent implements OnInit {
     }
   }
 
-  ngAfterViewInit() {
-    const saveButton = document.getElementById('saveButton');
-    const tooltip = saveButton?.querySelector('.tooltip');
-
-    if (saveButton && tooltip) {
-      saveButton.addEventListener('click', () => {
-        tooltip.textContent = 'Salvato';
-        saveButton.classList.add('saved');
-        setTimeout(() => {
-          tooltip.textContent = 'Save!';
-          saveButton.classList.remove('saved');
-        }, 1000);
-      });
-    }
-  }
-
-  onPanchinaPlayerChange(event: any, role: string) {
-    const playerId = event.target.value;
-    const selectedPanchinaro = this.panchinaPlayers.find((p) => p.id == playerId);
-
-    // Verifica se il giocatore è già presente tra i giocatori schierati
-    const isPlayerAlreadySelected = this.players.some((p) => p.id === selectedPanchinaro?.id);
-
-    if (selectedPanchinaro && !isPlayerAlreadySelected) {
-      this.selectedPlayer = {
-        id: selectedPanchinaro.id,
-        name: selectedPanchinaro.nomeCompleto,
-        role: selectedPanchinaro.ruolo,
-        x: 50,
-        y: 50,
-      };
-      this.players.push(this.selectedPlayer);
-      this.resetSelect(role);
-    } else {
-      alert('Questo giocatore è già stato schierato sul campo.');
-    }
-  }
-
   removePlayer(player: any) {
     this.players = this.players.filter((p) => p.id !== player.id);
-    this.resetSelect(player.role.toLowerCase());
-    this.selectedPlayer.name='';
   }
 
   resetSelect(role: string) {
-    switch (role) {
+    switch (role.toLowerCase()) {
       case 'portiere':
         this.selectedGoalkeeper = '';
         break;
