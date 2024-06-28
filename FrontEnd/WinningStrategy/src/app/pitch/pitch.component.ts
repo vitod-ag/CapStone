@@ -23,6 +23,7 @@ export class PitchComponent implements OnInit, OnChanges {
   defaultModule = '';
   previousPositions: any = null;
   lastMovedPlayer: any = null;
+  isLoading = false; // Variabile per lo spinner di caricamento
 
   selectedGoalkeeper = '';
   selectedDefender = '';
@@ -83,16 +84,11 @@ export class PitchComponent implements OnInit, OnChanges {
       const dropX = (event.offsetX / target.clientWidth) * 100;
       const dropY = (event.offsetY / target.clientHeight) * 100;
 
-      const targetPlayer = this.players.find((p) => p.id === player.id);
-      if (targetPlayer) {
-        targetPlayer.x = dropX;
-        targetPlayer.y = dropY;
-        this.lastMovedPlayer = targetPlayer;
-      } else {
-        player.x = dropX;
-        player.y = dropY;
-        player.color = this.selectedColor; // Assegna il colore corrente al nuovo giocatore
-        this.players.push(player);
+      const targetPlayerIndex = this.players.findIndex((p) => p.id === player.id);
+      if (targetPlayerIndex !== -1) {
+        this.players[targetPlayerIndex].x = dropX;
+        this.players[targetPlayerIndex].y = dropY;
+        this.lastMovedPlayer = this.players[targetPlayerIndex];
       }
     }
   }
@@ -258,6 +254,7 @@ export class PitchComponent implements OnInit, OnChanges {
   }
 
   save(): void {
+    this.isLoading = true; // Attiva lo spinner di caricamento
     const savedData: any = {
       colore: this.selectedColor,
       modulo: this.defaultModule,
@@ -278,8 +275,12 @@ export class PitchComponent implements OnInit, OnChanges {
       savedData.giocatoriPosizionati.push(data)
     })
     
-    this.salvatiSrv.saveData(savedData).subscribe();
-    this.router.navigate(['/salvati']);
+    this.salvatiSrv.saveData(savedData).subscribe(() => {
+      this.isLoading = false; // Disattiva lo spinner di caricamento
+      this.router.navigate(['/salvati']);
+    }, () => {
+      this.isLoading = false; // Disattiva lo spinner di caricamento in caso di errore
+    });
   }
 
   navigateToTeamSelection() {

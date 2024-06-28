@@ -15,7 +15,7 @@
         </div>
         <!-- Sezione Modulo -->
         <div class="mb-2">
-          <label for="moduleSelect" class="form-label">Scegli un modulo di <base href="">:</label>
+          <label for="moduleSelect" class="form-label">Scegli un modulo:</label>
           <select id="moduleSelect" class="form-select" [(ngModel)]="defaultModule" (change)="onModuleChange($event)">
             <option value="" selected>Seleziona un modulo</option>
             <option value="4-3-3">4-3-3 (Offensivo)</option>
@@ -32,11 +32,6 @@
           <button class="btn restore-btn mb-2" (click)="restorePreviousPosition()">
             <b><i class="bi bi-arrow-clockwise"></i>&nbsp;Ultima mossa</b>
           </button>
-        </div>
-        <!-- Sezione Nome Giocatore -->
-        <div class="mb-2 w-100">
-          <label for="playerName" class="form-label player-label">Nome Giocatore:</label>
-          <input type="text" id="playerName" class="form-control w-100" [(ngModel)]="selectedPlayer.name">
         </div>
         <!-- Sezione Note Tattiche -->
         <div class="mb-2 w-100">
@@ -114,6 +109,13 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Spinner di caricamento -->
+  <div *ngIf="isLoading" class="spinner-overlay">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
     </div>
   </div>
 </div>
