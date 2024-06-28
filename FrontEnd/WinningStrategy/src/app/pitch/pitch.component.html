@@ -6,7 +6,7 @@
         <!-- Sezione Colore -->
         <div class="mb-2">
           <label for="colorSelect" class="form-label">Scegli il colore:</label>&nbsp;&nbsp;&nbsp;
-          <select id="colorSelect" class="form-select" [(ngModel)]="selectedColor">
+          <select id="colorSelect" class="form-select" [(ngModel)]="selectedColor" (ngModelChange)="updatePlayerColors()">
             <option value="blue">🔵 Blu</option>
             <option value="red">🔴 Rosso</option>
             <option value="green">🟢 Verde</option>
@@ -15,9 +15,9 @@
         </div>
         <!-- Sezione Modulo -->
         <div class="mb-2">
-          <label for="moduleSelect" class="form-label">Seleziona il modulo:</label>
+          <label for="moduleSelect" class="form-label">Scegli un modulo di <base href="">:</label>
           <select id="moduleSelect" class="form-select" [(ngModel)]="defaultModule" (change)="onModuleChange($event)">
-            <option value="" selected > Seleziona modulo</option>
+            <option value="" selected>Seleziona un modulo</option>
             <option value="4-3-3">4-3-3 (Offensivo)</option>
             <option value="4-4-2">4-4-2 (Equilibrio)</option>
             <option value="5-4-1">5-4-1 (Difensivo)</option>
@@ -60,6 +60,7 @@
     <div class="mt-2 col-lg-6 col-md-12 col-sm-12">
       <div class="pitch-container mx-auto" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
         <img src="../../../assets/img/base_lavagna.png" alt="Campo da calcio" class="pitch">
+        <!-- Aggiunto evento dblclick per rimuovere un giocatore -->
         <div class="player" *ngFor="let player of players; let i = index" [ngStyle]="{'top.%': player.y, 'left.%': player.x, 'background-color': player.color}" draggable="true" (dragstart)="onDragStart($event, player)" (dblclick)="removePlayer(player)">
           <div class="player-circle">{{ player.nomeCompleto || player.ruolo }}</div>
         </div>

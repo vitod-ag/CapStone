@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CalciatoreService } from '../service/calciatore.service';
 import { DatiSalvati } from '../interface/dati-salvati.interface';
@@ -10,7 +10,7 @@ import { SalvatiService } from '../service/salvati.service';
   templateUrl: './pitch.component.html',
   styleUrls: ['./pitch.component.scss'],
 })
-export class PitchComponent implements OnInit {
+export class PitchComponent implements OnInit, OnChanges {
   players: any[] = [];
   panchinaPlayers: Calciatore[] = [];
   goalkeepers: Calciatore[] = [];
@@ -51,6 +51,12 @@ export class PitchComponent implements OnInit {
     });
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['selectedColor']) {
+      this.updatePlayerColors();
+    }
+  }
+
   filterPlayersByRole() {
     this.goalkeepers = this.panchinaPlayers.filter((p) => p.ruolo === 'Portiere');
     this.defenders = this.panchinaPlayers.filter((p) => p.ruolo === 'Difensore');
@@ -85,6 +91,7 @@ export class PitchComponent implements OnInit {
       } else {
         player.x = dropX;
         player.y = dropY;
+        player.color = this.selectedColor; // Assegna il colore corrente al nuovo giocatore
         this.players.push(player);
       }
     }
@@ -195,6 +202,8 @@ export class PitchComponent implements OnInit {
           numeroMaglia: selectedPanchinaro.numeroMaglia,
           color: this.selectedColor
         };
+      } else {
+        alert(`Hai già selezionato tutti i giocatori necessari per il ruolo ${role}.`);
       }
       this.resetSelect(role);
     }
@@ -206,6 +215,7 @@ export class PitchComponent implements OnInit {
 
   resetPositions() {
     this.players = [];
+    this.setPlayersForModule(this.defaultModule);
   }
 
   restorePreviousPosition() {
@@ -241,6 +251,12 @@ export class PitchComponent implements OnInit {
     }
   }
 
+  updatePlayerColors() {
+    this.players.forEach(player => {
+      player.color = this.selectedColor;
+    });
+  }
+
   save(): void {
     const savedData: any = {
       colore: this.selectedColor,
@@ -265,7 +281,6 @@ export class PitchComponent implements OnInit {
     this.salvatiSrv.saveData(savedData).subscribe();
     this.router.navigate(['/salvati']);
   }
-
 
   navigateToTeamSelection() {
     this.router.navigate(['/scelta-squadra']);
