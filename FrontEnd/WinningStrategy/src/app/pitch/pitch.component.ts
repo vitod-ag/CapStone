@@ -20,7 +20,7 @@ export class PitchComponent implements OnInit {
   selectedColor = 'blue';
   selectedPlayer: any = {};
   tacticalNotes = '';
-  defaultModule = '4-3-3';
+  defaultModule = '';
   previousPositions: any = null;
   lastMovedPlayer: any = null;
 
@@ -89,7 +89,7 @@ export class PitchComponent implements OnInit {
 
   onModuleChange(event: any) {
     const module = event.target.value;
-    this.defaultModule = module;
+    this.defaultModule = '';
     this.setPlayersForModule(module);
   }
 
@@ -116,65 +116,65 @@ export class PitchComponent implements OnInit {
 
   createInitialPlayersFor433() {
     return [
-      { ruolo: 'Portiere', x: 10, y: 50, color: this.selectedColor },
-      { ruolo: 'Difensore', x: 30, y: 30, color: this.selectedColor },
-      { ruolo: 'Difensore', x: 30, y: 50, color: this.selectedColor },
-      { ruolo: 'Difensore', x: 30, y: 70, color: this.selectedColor },
-      { ruolo: 'Difensore', x: 30, y: 90, color: this.selectedColor },
-      { ruolo: 'Centrocampista', x: 50, y: 30, color: this.selectedColor },
-      { ruolo: 'Centrocampista', x: 50, y: 50, color: this.selectedColor },
-      { ruolo: 'Centrocampista', x: 50, y: 70, color: this.selectedColor },
-      { ruolo: 'Attaccante', x: 70, y: 30, color: this.selectedColor },
-      { ruolo: 'Attaccante', x: 70, y: 50, color: this.selectedColor },
-      { ruolo: 'Attaccante', x: 70, y: 70, color: this.selectedColor }
+      { ruolo: 'Portiere', x: 9, y: 45, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 25, y: 14, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 23, y: 35, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 23, y: 55, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 25, y: 75, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 28, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 42, y: 45, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 61, color: this.selectedColor },
+      { ruolo: 'Attaccante', x: 80, y: 20, color: this.selectedColor },
+      { ruolo: 'Attaccante', x: 75, y: 45, color: this.selectedColor },
+      { ruolo: 'Attaccante', x: 80, y: 70, color: this.selectedColor }
     ];
   }
 
   createInitialPlayersFor442() {
     return [
-      { ruolo: 'Portiere', x: 10, y: 50, color: this.selectedColor },
-      { ruolo: 'Difensore', x: 30, y: 30, color: this.selectedColor },
-      { ruolo: 'Difensore', x: 30, y: 50, color: this.selectedColor },
-      { ruolo: 'Difensore', x: 30, y: 70, color: this.selectedColor },
-      { ruolo: 'Difensore', x: 30, y: 90, color: this.selectedColor },
-      { ruolo: 'Centrocampista', x: 50, y: 20, color: this.selectedColor },
-      { ruolo: 'Centrocampista', x: 50, y: 40, color: this.selectedColor },
-      { ruolo: 'Centrocampista', x: 50, y: 60, color: this.selectedColor },
-      { ruolo: 'Centrocampista', x: 50, y: 80, color: this.selectedColor },
-      { ruolo: 'Attaccante', x: 70, y: 40, color: this.selectedColor },
-      { ruolo: 'Attaccante', x: 70, y: 60, color: this.selectedColor }
+      { ruolo: 'Portiere', x: 9, y: 45, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 25, y: 14, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 23, y: 35, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 23, y: 55, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 25, y: 75, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 14, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 47, y: 35, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 47, y: 55, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 75, color: this.selectedColor },
+      { ruolo: 'Attaccante', x: 78, y: 40, color: this.selectedColor },
+      { ruolo: 'Attaccante', x: 84, y: 55, color: this.selectedColor }
     ];
   }
 
   createInitialPlayersFor541() {
     return [
-      { ruolo: 'Portiere', x: 10, y: 50, color: this.selectedColor },
-      { ruolo: 'Difensore', x: 30, y: 20, color: this.selectedColor },
-      { ruolo: 'Difensore', x: 30, y: 40, color: this.selectedColor },
-      { ruolo: 'Difensore', x: 30, y: 60, color: this.selectedColor },
-      { ruolo: 'Difensore', x: 30, y: 80, color: this.selectedColor },
-      { ruolo: 'Difensore', x: 30, y: 90, color: this.selectedColor },
-      { ruolo: 'Centrocampista', x: 50, y: 20, color: this.selectedColor },
-      { ruolo: 'Centrocampista', x: 50, y: 40, color: this.selectedColor },
-      { ruolo: 'Centrocampista', x: 50, y: 60, color: this.selectedColor },
-      { ruolo: 'Centrocampista', x: 50, y: 80, color: this.selectedColor },
-      { ruolo: 'Attaccante', x: 70, y: 50, color: this.selectedColor }
+      { ruolo: 'Portiere', x: 9, y: 45, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 25, y: 15, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 23, y: 32, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 22, y: 45, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 23, y: 58, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 25, y: 75, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 14, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 47, y: 35, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 47, y: 55, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 50, y: 75, color: this.selectedColor },
+      { ruolo: 'Attaccante', x: 75, y: 45, color: this.selectedColor }
     ];
   }
 
   createInitialPlayersFor352() {
     return [
-      { ruolo: 'Portiere', x: 10, y: 50, color: this.selectedColor },
-      { ruolo: 'Difensore', x: 30, y: 30, color: this.selectedColor },
-      { ruolo: 'Difensore', x: 30, y: 50, color: this.selectedColor },
-      { ruolo: 'Difensore', x: 30, y: 70, color: this.selectedColor },
-      { ruolo: 'Centrocampista', x: 50, y: 20, color: this.selectedColor },
-      { ruolo: 'Centrocampista', x: 50, y: 40, color: this.selectedColor },
-      { ruolo: 'Centrocampista', x: 50, y: 60, color: this.selectedColor },
-      { ruolo: 'Centrocampista', x: 50, y: 80, color: this.selectedColor },
-      { ruolo: 'Centrocampista', x: 50, y: 90, color: this.selectedColor },
-      { ruolo: 'Attaccante', x: 70, y: 40, color: this.selectedColor },
-      { ruolo: 'Attaccante', x: 70, y: 60, color: this.selectedColor }
+      { ruolo: 'Portiere', x: 9, y: 45, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 24, y: 32, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 22, y: 45, color: this.selectedColor },
+      { ruolo: 'Difensore', x: 24, y: 58, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 46, y: 10, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 47, y: 31, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 42, y: 45, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 45, y: 58, color: this.selectedColor },
+      { ruolo: 'Centrocampista', x: 48, y: 78, color: this.selectedColor },
+      { ruolo: 'Attaccante', x: 80, y: 40, color: this.selectedColor },
+      { ruolo: 'Attaccante', x: 70, y: 55, color: this.selectedColor }
     ];
   }
 
