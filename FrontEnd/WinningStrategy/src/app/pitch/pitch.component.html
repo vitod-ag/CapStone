@@ -17,6 +17,7 @@
         <div class="mb-2">
           <label for="moduleSelect" class="form-label">Seleziona il modulo:</label>
           <select id="moduleSelect" class="form-select" [(ngModel)]="defaultModule" (change)="onModuleChange($event)">
+            <option value="" selected > Seleziona modulo</option>
             <option value="4-3-3">4-3-3 (Offensivo)</option>
             <option value="4-4-2">4-4-2 (Equilibrio)</option>
             <option value="5-4-1">5-4-1 (Difensivo)</option>

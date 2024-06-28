@@ -14,6 +14,7 @@ public class Salvati {
     private int id;
     private String colore;
     private String modulo;
+    private String noteTattiche;
 
     @ManyToOne
     @JoinColumn(name = "campionato_id")

@@ -18,5 +18,7 @@ public class SalvatiDto {
     @NotNull
     private String modulo;
     @NotNull
+    private String noteTattiche;
+    @NotNull
     private List<GiocatorePosizionatoDto> giocatoriPosizionati;
 }

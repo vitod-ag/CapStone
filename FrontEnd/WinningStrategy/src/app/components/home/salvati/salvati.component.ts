@@ -10,7 +10,7 @@ import { SalvatiService } from 'src/app/service/salvati.service';
 })
 export class SalvatiComponent implements OnInit{
   
-  savedData: DatiSalvati | null = null;
+  savedDataList: any;
 
   constructor(
     private salvatiSrv: SalvatiService,
@@ -18,12 +18,16 @@ export class SalvatiComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    this.savedData = this.salvatiSrv.getSavedData();
+    this.salvatiSrv.getSavedData().subscribe((data) => {
+      console.log(data);
+      
+      this.savedDataList=data;
+    });
   }
 
   clearSavedData(): void {
     this.salvatiSrv.clearSavedData();
-    this.savedData = null;
+    this.savedDataList = null;
   }
 
   goBack(): void {

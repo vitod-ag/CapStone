@@ -46,7 +46,7 @@ export class SceltaSquadraComponent implements OnInit {
 
   onSubmit(): void {
     if (this.squadraScelta) {
-      this.router.navigate(['/pitch'], { queryParams: { squadraId: this.squadraScelta.id } });
+      this.router.navigate(['/pitch'], { queryParams: { squadraId: this.squadraScelta.id, campionatoId: this.campionatoScelto?.id} });
     }
   }
 }

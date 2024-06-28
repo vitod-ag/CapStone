@@ -43,6 +43,7 @@ public class SalvatiService {
                 salvati.setSquadra(squadra);
                 salvati.setColore(salvatiDto.getColore());
                 salvati.setModulo(salvatiDto.getModulo());
+                salvati.setNoteTattiche(salvatiDto.getNoteTattiche());
                 List<GiocatoriPosizionati> giocatoriPosizionatiList = new ArrayList<>();
                 salvatiDto.getGiocatoriPosizionati().forEach(giocatore -> {
                     Integer id = giocatorePosizionatoService.saveGiocatorePosizionato(giocatore);

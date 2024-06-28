@@ -28,6 +28,8 @@ export class PitchComponent implements OnInit {
   selectedDefender = '';
   selectedMidfielder = '';
   selectedForward = '';
+  selectedSquadra = null;
+  selectedCampionato = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,9 +40,10 @@ export class PitchComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
-      const squadraId = params['squadraId'];
-      if (squadraId) {
-        this.calciatoreSrv.getCalciatoriBySquadreId(squadraId).subscribe((data) => {
+      this.selectedSquadra = params['squadraId'];
+      this.selectedCampionato = params['campionatoId'];
+      if (this.selectedSquadra) {
+        this.calciatoreSrv.getCalciatoriBySquadreId(this.selectedSquadra).subscribe((data) => {
           this.panchinaPlayers = data;
           this.filterPlayersByRole();
         });
@@ -89,7 +92,6 @@ export class PitchComponent implements OnInit {
 
   onModuleChange(event: any) {
     const module = event.target.value;
-    this.defaultModule = '';
     this.setPlayersForModule(module);
   }
 
@@ -240,14 +242,30 @@ export class PitchComponent implements OnInit {
   }
 
   save(): void {
-    const savedData: DatiSalvati = {
-      players: this.players,
-      noteTattiche: this.tacticalNotes,
+    const savedData: any = {
+      colore: this.selectedColor,
+      modulo: this.defaultModule,
+      squadraId: Number(this.selectedSquadra),
+      campionatoId: Number(this.selectedCampionato),
+      giocatoriPosizionati: [],
+      noteTattiche: this.tacticalNotes
     };
-
-    this.salvatiSrv.saveData(savedData);
+    this.players.forEach(player => {
+      if(!player.id){
+        return;
+      }
+      let data = {
+        calciatoreId: player.id, 
+        x: player.x,
+        y: player.y
+      }
+      savedData.giocatoriPosizionati.push(data)
+    })
+    
+    this.salvatiSrv.saveData(savedData).subscribe();
     this.router.navigate(['/salvati']);
   }
+
 
   navigateToTeamSelection() {
     this.router.navigate(['/scelta-squadra']);
