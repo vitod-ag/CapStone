@@ -103,7 +103,7 @@
                 <select id="panchinaSelectForward" class="form-select" [(ngModel)]="selectedForward" (change)="onPanchinaPlayerChange($event, 'Attaccante'); attaccante.selectedIndex=0" #attaccante>
                   <option value="">Seleziona un attaccante</option>
                   <option *ngFor="let panchinaro of forwards" [value]="panchinaro.id">
-                    {{ panchinaro.nomeCompleto }}
+                    {{ panchinaro.nomeCompleto }}#&nbsp;{{ panchinaro.numeroMaglia}}
                   </option>
                 </select>
               </div>
