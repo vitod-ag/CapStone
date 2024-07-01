@@ -6,7 +6,7 @@
       "squadre": [
         {
           "nome": "Juventus",
-          "logo": "https://w7.pngwing.com/pngs/751/25/png-transparent-juventus-f-c-uefa-champions-league-real-madrid-c-f-2017-18-serie-a-coppa-italia-leicester-city-f-c-angle-text-sport.png",
+          "logo": "assets/img/logo-juve.jpeg",
           "calciatori": [
             {
               "nomeCompleto": "W.Szczesny",
@@ -147,7 +147,7 @@
         },
         {
           "nome": "Atalanta",
-          "logo": "https://w7.pngwing.com/pngs/751/25/png-transparent-juventus-f-c-uefa-champions-league-real-madrid-c-f-2017-18-serie-a-coppa-italia-leicester-city-f-c-angle-text-sport.png",
+          "logo": "assets/img/logo-atalanta.jpeg",
           "calciatori": [
             {
               "nomeCompleto": "M.Carnesecchi",
@@ -273,7 +273,7 @@
         },
         {
           "nome": "Milan",
-          "logo": "https://w7.pngwing.com/pngs/656/989/png-transparent-ac-milan-uefa-champions-league-football-ac-milan.png",
+          "logo": "assets/img/logo-milan.png",
           "calciatori": [
             {
               "nomeCompleto": "M.Maignan",
@@ -673,7 +673,7 @@
       "squadre": [
         {
           "nome": "Italia",
-          "logo": "url_logo_arsenal",
+          "logo": "assets/img/logo-Italia.jpeg",
           "calciatori": [
             {
               "nomeCompleto": "G.Donnarumma",

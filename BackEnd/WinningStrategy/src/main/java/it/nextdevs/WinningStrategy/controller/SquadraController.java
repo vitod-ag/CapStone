@@ -84,4 +84,10 @@ public class SquadraController {
     public List<Calciatore> getCalciatoriBySquadraId(@PathVariable int id) {
         return squadraService.getCalciatoriBySquadraId(id);
     }
+
+
+    @GetMapping("/squadre/{id}/logo")
+    public String getLogoBySquadraId(@PathVariable int id) {
+        return squadraService.getLogoBySquadraId(id);
+    }
 }

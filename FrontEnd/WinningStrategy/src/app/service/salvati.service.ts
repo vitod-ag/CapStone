@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { DatiSalvati } from '../interface/dati-salvati.interface';
 import { environment } from '../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
@@ -43,6 +42,10 @@ export class SalvatiService {
 
   getSavedData(){
     return this.http.get(`${environment.apiUrl}salvati`);
+  }
+
+  getSaveDataById(id:number){
+    return this.http.get(`${environment.apiUrl}salvati/${id}`).pipe(catchError(this.errors));
   }
 
   clearSavedData(): void {

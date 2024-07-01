@@ -1,9 +1,9 @@
 import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CalciatoreService } from '../service/calciatore.service';
-import { DatiSalvati } from '../interface/dati-salvati.interface';
 import { Calciatore } from '../interface/calciatore.interface';
 import { SalvatiService } from '../service/salvati.service';
+import { SquadraService } from '../service/squadra.service';
 
 @Component({
     selector: 'app-pitch',
@@ -23,7 +23,7 @@ export class PitchComponent implements OnInit, OnChanges {
     defaultModule = '';
     previousPositions: any = null;
     lastMovedPlayer: any = null;
-    isLoading = false; // Variabile per lo spinner di caricamento
+    isLoading = false; 
 
     selectedGoalkeeper = '';
     selectedDefender = '';
@@ -31,12 +31,14 @@ export class PitchComponent implements OnInit, OnChanges {
     selectedForward = '';
     selectedSquadra = null;
     selectedCampionato = null;
+    selectedLogo? = '';
 
     constructor(
         private route: ActivatedRoute,
         private calciatoreSrv: CalciatoreService,
         private router: Router,
-        private salvatiSrv: SalvatiService
+        private salvatiSrv: SalvatiService,
+        private squadraSrv: SquadraService
     ) {}
 
     ngOnInit(): void {
@@ -46,8 +48,9 @@ export class PitchComponent implements OnInit, OnChanges {
             if (this.selectedSquadra) {
                 this.calciatoreSrv
                     .getCalciatoriBySquadreId(this.selectedSquadra)
-                    .subscribe((data) => {
+                    .subscribe(async(data) => {
                         this.panchinaPlayers = data;
+                        this.selectedLogo = await this.squadraSrv.getLogoById(Number(this.selectedSquadra)).toPromise(); 
                         this.filterPlayersByRole();
                     });
             }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DatiSalvati } from 'src/app/interface/dati-salvati.interface';
 import { SalvatiService } from 'src/app/service/salvati.service';
 
 @Component({
@@ -29,6 +28,14 @@ export class SalvatiComponent implements OnInit{
     this.salvatiSrv.clearSavedData();
     this.savedDataList = null;
   }
+
+  saveAndGoBack(savedData: any): void {
+    this.salvatiSrv.saveData(savedData).subscribe((response: any) => {
+      const savedId = (response as { id: number }).id;
+      this.router.navigate(['/pitch', savedId]); 
+    });
+  }
+
 
   goBack(): void {
     this.router.navigate(['/pitch']); 

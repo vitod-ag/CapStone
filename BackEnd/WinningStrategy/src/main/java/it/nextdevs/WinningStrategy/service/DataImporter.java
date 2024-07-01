@@ -12,7 +12,7 @@ public class DataImporter implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         // Path del tuo file JSON nella cartella "data"
-        String jsonFilePath = "src/main/resources/data/file.json";
-        dataImportService.importData(jsonFilePath);
+//        String jsonFilePath = "src/main/resources/data/file.json";
+//        dataImportService.importData(jsonFilePath);
     }
 }

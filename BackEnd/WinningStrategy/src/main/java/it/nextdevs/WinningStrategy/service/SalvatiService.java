@@ -72,4 +72,8 @@ public class SalvatiService {
     public List<Salvati> getAllSalvati() {
         return salvatiRepository.findAll();
     }
+
+    public Optional<Salvati> getSalvatiById(int id) {
+        return salvatiRepository.findById(id);
+    }
 }

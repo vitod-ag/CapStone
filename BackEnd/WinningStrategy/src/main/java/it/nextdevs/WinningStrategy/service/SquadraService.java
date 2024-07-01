@@ -110,4 +110,15 @@ public class SquadraService {
             throw new NotFoundException("La squadra con id: " + id + " non è presente");
         }
     }
+
+    public String getLogoBySquadraId(int id) {
+        Optional<Squadra> squadraOptional = getSquadraById(id);
+        if (squadraOptional.isPresent()) {
+            Squadra squadra = squadraOptional.get();
+            System.err.println(squadra.getLogo());
+            return squadra.getLogo();
+        } else {
+            throw new NotFoundException("La squadra con id: " + id + " non è presente");
+        }
+    }
 }

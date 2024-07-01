@@ -17,4 +17,8 @@ export class SquadraService {
   getSquadre(campionatoId: number): Observable<Squadra[]> {
     return this.http.get<Squadra[]>(`${this.apiUrl}campionato/${campionatoId}/squadre`);
   }
+
+  getLogoById(squadraId:number){
+    return this.http.get(`${this.apiUrl}squadre/${squadraId}/logo`,{responseType: "text"});
+  }
 }
