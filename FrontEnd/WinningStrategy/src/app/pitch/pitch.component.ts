@@ -213,10 +213,10 @@ export class PitchComponent implements OnInit, OnChanges {
       alert('Devi prima scegliere il modulo!');
       return;
     }
-
+  
     const playerId = event.target.value;
     const selectedPanchinaro = this.panchinaPlayers.find((p) => p.id == Number(playerId));
-
+  
     if (selectedPanchinaro) {
       const playerIndex = this.players.findIndex((p) => p.ruolo === role && !p.id);
       if (playerIndex !== -1) {
@@ -233,7 +233,7 @@ export class PitchComponent implements OnInit, OnChanges {
       } else {
         this.openModal(role);
       }
-      this.resetSelect(role);
+      this.resetSelect(role); 
     }
   }
 
