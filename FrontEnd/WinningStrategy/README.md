@@ -31,4 +31,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 npm install bootstrap@5.3.3
 npm install @auth0/angular-jwt
 npm i @abacritt/angularx-social-login@2.1.0
+ng add @ng-bootstrap/ng-bootstrap 
 

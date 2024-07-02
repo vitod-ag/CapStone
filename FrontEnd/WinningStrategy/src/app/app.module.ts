@@ -22,6 +22,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GoogleLoginComponent } from './components/dashboard/google-login/google-login.component';
 import { SceltaSquadraComponent } from './components/home/scelta-squadra/scelta-squadra.component';
 import { SalvatiComponent } from './components/home/salvati/salvati.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SwapPlayerModalComponent } from './components/home/swap-player-modal/swap-player-modal.component';
 
 @NgModule({
   declarations: [
@@ -36,14 +38,16 @@ import { SalvatiComponent } from './components/home/salvati/salvati.component';
     DashboardComponent,
     GoogleLoginComponent,
     SceltaSquadraComponent,
-    SalvatiComponent
+    SalvatiComponent,
+    SwapPlayerModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    SocialLoginModule
+    SocialLoginModule,
+    NgbModule
   ],
   providers: [
     {
