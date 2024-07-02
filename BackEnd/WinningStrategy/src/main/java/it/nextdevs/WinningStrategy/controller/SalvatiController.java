@@ -34,4 +34,15 @@ public class SalvatiController {
         return salvatiService.getSalvatiById(id).orElse(null);
     }
 
+    @DeleteMapping("/salvati/{id}")
+    public String deleteSalvatoById(@PathVariable int id) {
+        salvatiService.deleteSalvatoById(id);
+        return "Salvato eliminato con successo";
+    }
+
+    @DeleteMapping("salvati")
+    public void deleteAllSalvati() {
+        salvatiService.deleteAllSalvati();
+    }
+
 }

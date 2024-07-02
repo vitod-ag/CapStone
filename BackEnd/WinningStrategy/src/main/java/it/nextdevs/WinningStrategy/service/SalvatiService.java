@@ -76,4 +76,19 @@ public class SalvatiService {
     public Optional<Salvati> getSalvatiById(int id) {
         return salvatiRepository.findById(id);
     }
+
+    public String deleteSalvatoById(int id) {
+        Optional<Salvati> salvatiOptional = salvatiRepository.findById(id);
+        if (salvatiOptional.isPresent()) {
+            salvatiRepository.delete(salvatiOptional.get());
+            return "Salvato con id " + id + " eliminato con successo";
+        } else {
+            throw new NotFoundException("Il salvato con id: " + id + " non è presente");
+        }
+    }
+
+    public void deleteAllSalvati() {
+        salvatiRepository.deleteAll();
+    }
+
 }
