@@ -2,7 +2,7 @@
   <div *ngIf="savedDataList">
     <ng-container *ngFor="let savedData of savedDataList">
       <h4 class="mb-3">Giocatori Posizionati:</h4>
-      <div class="mt-2 col-lg-6 col-md-12 col-sm-12">
+      <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="pitch-container mx-auto">
           <img src="../../../assets/img/base_lavagna.png" alt="Campo da calcio" class="pitch">
           <div class="player" *ngFor="let player of savedData.giocatoriPosizionatiList; let i = index" [ngStyle]="{'top.%': player.y, 'left.%': player.x, 'background-color': savedData.colore}" draggable="false">
@@ -14,7 +14,7 @@
     <h4 class="my-3">Note Tattiche:</h4>
     <p>{{ savedData.noteTattiche }}</p>
 
-    <button class="btn btn-primary me-2" (click)="clearSavedData()">Cancella Salvataggio</button>
+    <button class="btn btn-primary" (click)="clearSavedData()">Cancella Salvataggio</button>
     <button class="btn btn-primary" (click)="goBack()">Torna al Campo</button>
     </ng-container>
     
