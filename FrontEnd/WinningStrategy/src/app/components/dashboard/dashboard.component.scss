@@ -8,11 +8,14 @@ body {
   flex-direction: column;
   height: 100vh;
   margin: -20px 0 50px;
+  background-image: url(../../../assets/img/sfondo_tattica.png);
+  background-size: cover;
 }
 
 h1 {
   font-weight: bold;
   margin: 0;
+  color: #FFFFFF;
 }
 
 h2 {
@@ -62,10 +65,11 @@ button:focus {
 button.ghost {
   background-color: transparent;
   border-color: #ffffff;
+  background-color: #14213D;
 }
 
 form {
-  background-color: rgb(243, 243, 243);
+  background-color: #14213D;
   display: flex;
   align-items: center;
   justify-content: center;
