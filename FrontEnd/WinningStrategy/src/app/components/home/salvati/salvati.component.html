@@ -1,10 +1,12 @@
-<div class="container align-items-center">
-  <div class="row mt-3 button-row">
-    <div class="col-6 d-flex justify-content-start">
-      <button class="btn btn-primary" (click)="deleteSalvataggi()">Cancella Salvataggi</button>
-    </div>
-    <div class="col-6 d-flex justify-content-end">
-      <button class="btn btn-primary" (click)="goBack()">Torna al Campo</button>
+<div class="container align-items-end">
+  <div class="fixed-buttons">
+    <div class="row button-row">
+      <div class="col-6 d-flex justify-content-start">
+        <button class="btn btn-primary" (click)="deleteSalvataggi()">Cancella Tutti i Salvataggi</button>
+      </div>
+      <div class="col-6 d-flex justify-content-end">
+        <button class="btn btn-primary" (click)="goBack()">Torna al Campo</button>
+      </div>
     </div>
   </div>
 
@@ -12,11 +14,11 @@
     <div class="col-lg-8 col-md-10 col-sm-12" *ngIf="savedDataList">
       <ng-container *ngFor="let savedData of savedDataList">
         <div class="d-flex flex-column align-items-start mb-5">
-          <h4 class="mb-3">Giocatori Posizionati:</h4>
+          <button class="btn btn-primary" (click)="deleteSalvataggio(savedData.id)">Cancella Salvataggio</button>
           <div class="pitch-container">
             <img src="../../../assets/img/base_lavagna.png" alt="Campo da calcio" class="pitch">
-            <div class="player" *ngFor="let player of savedData.giocatoriPosizionatiList; let i = index" 
-                 [ngStyle]="{'top.%': (player.y + 5), 'left.%': player.x, 'background-color': savedData.colore}" 
+            <div class="player" *ngFor="let player of savedData.giocatoriPosizionatiList; let i = index"
+                 [ngStyle]="{'top.%': (player.y + 5), 'left.%': player.x, 'background-color': savedData.colore}"
                  draggable="false">
               <div class="player-circle">{{ player.calciatore.nomeCompleto || player.calciatore.ruolo }}</div>
             </div>
@@ -24,7 +26,6 @@
           <div class="notes-actions mt-3 mb-5">
             <h4 class="my-3">Note Tattiche:</h4>
             <p>{{ savedData.noteTattiche }}</p>
-            <button class="btn btn-primary" (click)="deleteSalvataggio(savedData.id)">Cancella Salvataggio</button>
           </div>
         </div>
       </ng-container>
