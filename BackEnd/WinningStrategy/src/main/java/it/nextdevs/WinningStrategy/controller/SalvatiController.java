@@ -40,9 +40,9 @@ public class SalvatiController {
         return "Salvato eliminato con successo";
     }
 
-    @DeleteMapping("salvati")
-    public void deleteAllSalvati() {
-        salvatiService.deleteAllSalvati();
+    @DeleteMapping("salvati/utente/{id}")
+    public void deleteAllSalvati(@PathVariable int id) {
+        salvatiService.deleteAllSalvati(id);
     }
 
 }

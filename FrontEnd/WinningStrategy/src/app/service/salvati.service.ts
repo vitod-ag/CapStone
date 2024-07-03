@@ -36,7 +36,7 @@ export class SalvatiService {
       }
       return throwError(error)
   }
-  saveData(data: {campionatoId: number, squadraId: number, colore: string, modulo: string, noteTattiche: string, giocatoriPosizionati: { x:string, y:string, calciatoreId: number}[]}) {
+  saveData(data: {campionatoId: number, squadraId: number, colore: string, userId:number, modulo: string, noteTattiche: string, giocatoriPosizionati: { x:string, y:string, calciatoreId: number}[]}) {
     return this.http.post(`${environment.apiUrl}salvataggio`, data).pipe(catchError(this.errors));
   }
 
@@ -48,8 +48,12 @@ export class SalvatiService {
     return this.http.get(`${environment.apiUrl}salvati/${id}`).pipe(catchError(this.errors));
   }
 
-  clearSavedData(): void {
-    localStorage.removeItem('savedData');
+  deleteSalvataggio(id:number){
+    return this.http.delete(`${environment.apiUrl}salvati/${id}`,{responseType:"text"});
+  }
+
+  deleteSalvataggi(id: number | undefined){
+    return this.http.delete(`${environment.apiUrl}salvati/utente/${id}`,{responseType:"text"});
   }
 
 }

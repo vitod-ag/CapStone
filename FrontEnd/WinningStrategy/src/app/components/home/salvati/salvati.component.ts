@@ -1,44 +1,51 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/interface/user.interface';
+import { AuthService } from 'src/app/service/auth.service';
 import { SalvatiService } from 'src/app/service/salvati.service';
 
 @Component({
-  selector: 'app-salvati',
-  templateUrl: './salvati.component.html',
-  styleUrls: ['./salvati.component.scss']
+    selector: 'app-salvati',
+    templateUrl: './salvati.component.html',
+    styleUrls: ['./salvati.component.scss'],
 })
-export class SalvatiComponent implements OnInit{
-  
-  savedDataList: any;
+export class SalvatiComponent implements OnInit {
+    savedDataList: any;
+    user: User | undefined;
 
-  constructor(
-    private salvatiSrv: SalvatiService,
-    private router: Router
-  ) {}
+    constructor(private salvatiSrv: SalvatiService, private router: Router, private authSrv: AuthService) {}
 
-  ngOnInit(): void {
-    this.salvatiSrv.getSavedData().subscribe((data) => {
-      console.log(data);
-      
-      this.savedDataList=data;
-    });
-  }
+    ngOnInit(): void {
+        this.authSrv.user$.subscribe((data) =>
+      {
+        this.user = data?.user
+      })
+        this.salvatiSrv.getSavedData().subscribe((data) => {
+            console.log(data);
+            this.savedDataList = data;
+        });
+    }
 
-  clearSavedData(): void {
-    this.salvatiSrv.clearSavedData();
-    this.savedDataList = null;
-  }
+    deleteSalvataggio(id: number) {
+        this.salvatiSrv.deleteSalvataggio(id).subscribe( () => {
+          this.salvatiSrv.getSavedData().subscribe((data) => {
+            console.log(data);
+            this.savedDataList = data;
+        });
+        });
+    }
 
-  saveAndGoBack(savedData: any): void {
-    this.salvatiSrv.saveData(savedData).subscribe((response: any) => {
-      const savedId = (response as { id: number }).id;
-      this.router.navigate(['/pitch', savedId]); 
-    });
-  }
+    deleteSalvataggi() {
+        this.salvatiSrv.deleteSalvataggi(this.user?.idUtente).subscribe( () => {
+          this.salvatiSrv.getSavedData().subscribe((data) => {
+            console.log(data);
 
+            this.savedDataList = data;
+        });
+        });
+    }
 
-  goBack(): void {
-    this.router.navigate(['/pitch']); 
-  }
-
+    goBack(): void {
+      this.router.navigate(['/pitch']); 
+    }
 }

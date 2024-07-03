@@ -14,6 +14,8 @@ public class SalvatiDto {
     @NotNull
     private int squadraId;
     @NotNull
+    private int userId;
+    @NotNull
     private String colore;
     @NotNull
     private String modulo;

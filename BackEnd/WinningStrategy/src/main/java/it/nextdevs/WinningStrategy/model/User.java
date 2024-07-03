@@ -1,5 +1,6 @@
 package it.nextdevs.WinningStrategy.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import it.nextdevs.WinningStrategy.enums.TipoUtente;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -25,6 +26,10 @@ public class User implements UserDetails {
     private TipoUtente tipoUtente;
     private String avatar;
     private String provider;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private List<Salvati> salvati;
 
 
     @Override

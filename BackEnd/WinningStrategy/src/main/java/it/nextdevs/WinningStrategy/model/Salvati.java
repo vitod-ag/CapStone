@@ -27,5 +27,7 @@ public class Salvati {
     @OneToMany(mappedBy = "salvati")
     private List<GiocatoriPosizionati> giocatoriPosizionatiList;
 
-
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

@@ -11,7 +11,7 @@
         </div>
         <div class="form-group mx-3">
           <label for="squadra">Squadra</label>
-          <select id="squadra" class="form-control" [(ngModel)]="squadraScelta" name="squadra" [disabled]="!campionatoScelto">
+          <select id="squadra" class="form-control" [(ngModel)]="squadraScelta" name="squadra" (change)="onSquadraChange()" [disabled]="!campionatoScelto">
             <option *ngFor="let squadra of squadre" [ngValue]="squadra">{{ squadra.nome }}</option>
           </select>
         </div>

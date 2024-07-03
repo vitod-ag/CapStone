@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CalciatoreService } from '../service/calciatore.service';
 import { Calciatore } from '../interface/calciatore.interface';
@@ -6,6 +6,8 @@ import { SalvatiService } from '../service/salvati.service';
 import { SquadraService } from '../service/squadra.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SwapPlayerModalComponent } from '../components/home/swap-player-modal/swap-player-modal.component';
+import { AuthService } from '../service/auth.service';
+import { User } from '../interface/user.interface';
 
 @Component({
   selector: 'app-pitch',
@@ -34,6 +36,7 @@ export class PitchComponent implements OnInit, OnChanges {
   selectedSquadra = null;
   selectedCampionato = null;
   selectedLogo? = '';
+  user: User | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -41,10 +44,15 @@ export class PitchComponent implements OnInit, OnChanges {
     private router: Router,
     private salvatiSrv: SalvatiService,
     private squadraSrv: SquadraService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private cdr: ChangeDetectorRef,
+    private authSrv: AuthService
   ) {}
 
   ngOnInit(): void {
+    this.authSrv.user$.subscribe((data) => {
+      this.user=data?.user;
+    })
     this.route.queryParams.subscribe((params) => {
       this.selectedSquadra = params['squadraId'];
       this.selectedCampionato = params['campionatoId'];
@@ -100,8 +108,10 @@ export class PitchComponent implements OnInit, OnChanges {
   }
 
   onModuleChange(event: any) {
+    
     const module = event.target.value;
     this.setPlayersForModule(module);
+    this.cdr.detectChanges();
   }
 
   setPlayersForModule(module: string) {
@@ -292,6 +302,7 @@ export class PitchComponent implements OnInit, OnChanges {
       modulo: this.defaultModule,
       squadraId: Number(this.selectedSquadra),
       campionatoId: Number(this.selectedCampionato),
+      userId: (this.user?.idUtente),
       giocatoriPosizionati: [],
       noteTattiche: this.tacticalNotes,
     };

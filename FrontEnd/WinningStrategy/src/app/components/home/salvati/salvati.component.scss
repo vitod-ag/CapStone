@@ -11,13 +11,15 @@
 .pitch-container {
   position: relative;
   width: 100%;
-  max-width: 100%;
-  margin: 0 auto ; 
+  max-width: 1500px; /* Aumenta la larghezza massima del campo */
+  height: auto; /* Mantieni l'aspetto proporzionale */
+  margin: 0 auto;
   overflow: hidden;
 }
 
 .pitch {
   width: 100%;
+  height: auto; /* Assicura che l'immagine del campo si adatti proporzionalmente */
   border-radius: 15px;
   font-family: "Wix Madefor Text", sans-serif;
   font-weight: 400;
@@ -35,8 +37,9 @@
 }
 
 .player-circle {
-  width: 50px;
-  height: 50px;
+  width: 30px; /* Riduce le dimensioni dei cerchi dei giocatori */
+  height: 30px;
+  line-height: 30px; /* Centra il testo verticalmente */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -44,6 +47,7 @@
   color: white;
   font-weight: bolder;
   font-family: "Wix Madefor Text", sans-serif;
+  font-size: 12px; /* Riduce la dimensione del font */
 }
 
 .button-section {

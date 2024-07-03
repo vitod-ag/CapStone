@@ -6,9 +6,7 @@ import it.nextdevs.WinningStrategy.model.Campionato;
 import it.nextdevs.WinningStrategy.model.GiocatoriPosizionati;
 import it.nextdevs.WinningStrategy.model.Salvati;
 import it.nextdevs.WinningStrategy.model.Squadra;
-import it.nextdevs.WinningStrategy.repository.CampionatoRepository;
-import it.nextdevs.WinningStrategy.repository.SalvatiRepository;
-import it.nextdevs.WinningStrategy.repository.SquadraRepository;
+import it.nextdevs.WinningStrategy.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +27,13 @@ public class SalvatiService {
     private SquadraRepository squadraRepository;
 
     @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
     private GiocatorePosizionatoService giocatorePosizionatoService;
+
+    @Autowired
+    private GiocatorePosizionatoRepository giocatorePosizionatoRepository;
 
     public Integer saveSalvati(SalvatiDto salvatiDto) {
         Optional<Campionato> campionatoOptional = campionatoRepository.findById(salvatiDto.getCampionatoId());
@@ -44,6 +48,9 @@ public class SalvatiService {
                 salvati.setColore(salvatiDto.getColore());
                 salvati.setModulo(salvatiDto.getModulo());
                 salvati.setNoteTattiche(salvatiDto.getNoteTattiche());
+                if (userRepository.findById(salvatiDto.getUserId()).isPresent()) {
+                    salvati.setUser(userRepository.findById(salvatiDto.getUserId()).get());
+                }
                 List<GiocatoriPosizionati> giocatoriPosizionatiList = new ArrayList<>();
                 salvatiDto.getGiocatoriPosizionati().forEach(giocatore -> {
                     Integer id = giocatorePosizionatoService.saveGiocatorePosizionato(giocatore);
@@ -80,6 +87,10 @@ public class SalvatiService {
     public String deleteSalvatoById(int id) {
         Optional<Salvati> salvatiOptional = salvatiRepository.findById(id);
         if (salvatiOptional.isPresent()) {
+            List<GiocatoriPosizionati> giocatoriPosizionatiList = salvatiOptional.get().getGiocatoriPosizionatiList();
+            giocatoriPosizionatiList.forEach(giocatoriPosizionati -> {
+                giocatorePosizionatoRepository.delete(giocatoriPosizionati);
+            });
             salvatiRepository.delete(salvatiOptional.get());
             return "Salvato con id " + id + " eliminato con successo";
         } else {
@@ -87,8 +98,20 @@ public class SalvatiService {
         }
     }
 
-    public void deleteAllSalvati() {
-        salvatiRepository.deleteAll();
+    public String deleteAllSalvati(int userId) {
+        List<Salvati> salvatiList = salvatiRepository.findAllByUser_IdUtente(userId);
+        if (!salvatiList.isEmpty()) {
+            salvatiList.forEach(salvati -> {
+                List<GiocatoriPosizionati> giocatoriPosizionatiList = salvati.getGiocatoriPosizionatiList();
+                giocatoriPosizionatiList.forEach(giocatoriPosizionati -> {
+                    giocatorePosizionatoRepository.delete(giocatoriPosizionati);
+                });
+                salvatiRepository.delete(salvati);
+            });
+            return "Tutti i salvati dell'utente con id " + userId + " sono stati eliminati con successo";
+        } else {
+            throw new NotFoundException("Non ci sono salvati per l'utente con id: " + userId);
+        }
     }
 
 }
