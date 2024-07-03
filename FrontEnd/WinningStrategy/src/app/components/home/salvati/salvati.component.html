@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid align-items-center">
   <div class="row mt-3">
     <div class="col d-flex justify-content-between">
       <button class="btn btn-primary" (click)="deleteSalvataggi()">Cancella Salvataggi</button>
@@ -6,8 +6,8 @@
     </div>
   </div>
   
-  <div class="row mt-5 justify-content-center align-items-center">
-    <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="savedDataList">
+  <div class="row mt-5 justify-content-center">
+    <div class="col-lg-8 col-md-10 col-sm-12" *ngIf="savedDataList">
       <ng-container *ngFor="let savedData of savedDataList">
         <h4 class="mb-3">Giocatori Posizionati:</h4>
         <div class="pitch-container mx-auto">
