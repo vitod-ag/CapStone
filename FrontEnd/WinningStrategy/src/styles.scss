@@ -6,3 +6,9 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+.sfondo {
+  background: url(assets/img/fari_sfondo.avif);
+  background-position: left center;
+  background-size: cover;
+}

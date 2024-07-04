@@ -20,6 +20,11 @@ export class DashboardComponent {
               this.router.navigate(['/home']);
           }
       });
+
+      let body = document.querySelector('body')
+      if (body) {
+        body.classList.add('sfondo')
+      }
   }
   onSubmit(form: NgForm) {
       try {

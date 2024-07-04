@@ -21,16 +21,19 @@ export class SalvatiComponent implements OnInit {
         this.user = data?.user
       })
         this.salvatiSrv.getSavedData().subscribe((data) => {
-            console.log(data);
             this.savedDataList = data;
+            let x = ""
         });
+    }
+
+    trasformaNumero(numero: string) {
+      return Number(numero)
     }
 
     deleteSalvataggio(id: number) {
       if (window.confirm('Sei sicuro di cancellare il salvataggio?')) {
         this.salvatiSrv.deleteSalvataggio(id).subscribe( () => {
           this.salvatiSrv.getSavedData().subscribe((data) => {
-            console.log(data);
             this.savedDataList = data;
         });
         });
@@ -41,7 +44,6 @@ export class SalvatiComponent implements OnInit {
       if (window.confirm('Sei sicuro di cancellare tutti i salvataggi?')) {
           this.salvatiSrv.deleteSalvataggi(this.user?.idUtente).subscribe(() => {
             this.salvatiSrv.getSavedData().subscribe((data) => {
-              console.log(data);
               this.savedDataList = data;
             });
           });

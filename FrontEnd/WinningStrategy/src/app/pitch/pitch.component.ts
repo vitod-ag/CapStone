@@ -260,6 +260,13 @@ export class PitchComponent implements OnInit, OnChanges {
   resetPositions() {
     this.players = [];
     this.setPlayersForModule(this.defaultModule);
+    if (this.selectedSquadra) {
+      this.calciatoreSrv.getCalciatoriBySquadreId(this.selectedSquadra).subscribe(async (data) => {
+        this.panchinaPlayers = data;
+        this.selectedLogo = await this.squadraSrv.getLogoById(Number(this.selectedSquadra)).toPromise();
+        this.filterPlayersByRole();
+      });
+    }
   }
 
   restorePreviousPosition() {
