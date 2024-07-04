@@ -81,7 +81,7 @@ export class PitchComponent implements OnInit, OnChanges {
 
   onDragStart(event: DragEvent, player: any) {
     if (this.players.some(p => !p.id)) {
-      alert('Scegliere i calciatori !');
+      alert('Scegliere tutti gli undici calciatori !');
       event.preventDefault();
       return;
     }
@@ -226,7 +226,7 @@ export class PitchComponent implements OnInit, OnChanges {
 
   onPanchinaPlayerChange(event: any, role: string) {
     if (!this.defaultModule) {
-      alert('Devi prima scegliere il modulo!');
+      alert('Scegli prima il modulo !');
       return;
     }
 

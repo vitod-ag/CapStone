@@ -11,7 +11,8 @@ export class SwapPlayerModalComponent implements OnInit {
   @Input() panchinaPlayers: any[] = [];
   @Input() role!: string;
 
-  availablePlayers: any[] = [];
+  availableFieldPlayers: any[] = [];
+  availableBenchPlayers: any[] = [];
   selectedFieldPlayer: any;
   selectedBenchPlayer: any;
 
@@ -22,7 +23,8 @@ export class SwapPlayerModalComponent implements OnInit {
   }
 
   filterPlayersByRole() {
-    this.availablePlayers = this.panchinaPlayers.filter(player => player.ruolo === this.role);
+    this.availableFieldPlayers = this.players.filter(player => player.ruolo === this.role);
+    this.availableBenchPlayers = this.panchinaPlayers.filter(player => player.ruolo === this.role);
   }
 
   swapPlayers() {
@@ -30,7 +32,7 @@ export class SwapPlayerModalComponent implements OnInit {
     console.log('Selected Field Player:', this.selectedFieldPlayer);
     console.log('Selected Bench Player:', this.selectedBenchPlayer);
 
-    // Assicurati che gli ID siano numeri
+    // Ensure that the IDs are numbers
     const selectedFieldPlayerId = parseInt(this.selectedFieldPlayer, 10);
     const selectedBenchPlayerId = parseInt(this.selectedBenchPlayer, 10);
 
@@ -47,7 +49,7 @@ export class SwapPlayerModalComponent implements OnInit {
       console.log('Field Player:', fieldPlayer);
       console.log('Bench Player:', benchPlayer);
 
-      // Scambia le posizioni e altre proprietà se necessario
+      // Swap positions and other properties if necessary
       this.players[fieldPlayerIndex] = {
         ...benchPlayer,
         x: fieldPlayer.x,

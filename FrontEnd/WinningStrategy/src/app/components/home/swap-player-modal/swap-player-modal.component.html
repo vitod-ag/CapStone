@@ -1,23 +1,26 @@
 <div class="modal-header">
-    <h5 class="modal-title" id="swapPlayerModalLabel">Scambia Giocatori</h5>
-    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+  <h4 class="modal-title"><b>Scambia giocatore</b></h4>
+  <button type="button" class="close btn btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+  </button>
+</div>
+<div class="modal-body">
+  <div class="form-group">
+    <label for="fieldPlayerSelect">Giocatori in campo</label>
+    <select id="fieldPlayerSelect" class="form-control" [(ngModel)]="selectedFieldPlayer">
+      <option *ngFor="let player of availableFieldPlayers" [value]="player.id">
+        {{ player.nomeCompleto }}
+      </option>
+    </select>
   </div>
-  <div class="modal-body">
-    <div class="mb-3">
-      <label for="selectedFieldPlayer" class="form-label">Giocatori in campo:</label>
-      <select id="selectedFieldPlayer" class="form-select" [(ngModel)]="selectedFieldPlayer">
-        <option *ngFor="let player of players" [value]="player.id">{{ player.nomeCompleto }}</option>
-      </select>
-    </div>
-    <div class="mb-3">
-      <label for="selectedBenchPlayer" class="form-label">Giocatori disponibili:</label>
-      <select id="selectedBenchPlayer" class="form-select" [(ngModel)]="selectedBenchPlayer">
-        <option *ngFor="let player of availablePlayers" [value]="player.id">{{ player.nomeCompleto }}</option>
-      </select>
-    </div>
+  <div class="form-group">
+    <label for="benchPlayerSelect">Giocatori in rosa</label>
+    <select id="benchPlayerSelect" class="form-control" [(ngModel)]="selectedBenchPlayer">
+      <option *ngFor="let player of availableBenchPlayers" [value]="player.id">
+        {{ player.nomeCompleto }}
+      </option>
+    </select>
   </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()"><b>Chiudi</b></button>
-    <button type="button" class="btn btn-warning" (click)="swapPlayers()"><b>Scambia</b></button>
-  </div>
-  
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-warning" (click)="swapPlayers()">Scambia</button>
+</div>
