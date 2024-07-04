@@ -51,8 +51,8 @@ export class PitchComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.authSrv.user$.subscribe((data) => {
-      this.user=data?.user;
-    })
+      this.user = data?.user;
+    });
     this.route.queryParams.subscribe((params) => {
       this.selectedSquadra = params['squadraId'];
       this.selectedCampionato = params['campionatoId'];
@@ -80,6 +80,12 @@ export class PitchComponent implements OnInit, OnChanges {
   }
 
   onDragStart(event: DragEvent, player: any) {
+    if (this.players.some(p => !p.id)) {
+      alert('Scegliere i calciatori !');
+      event.preventDefault();
+      return;
+    }
+
     event.dataTransfer?.setData('text/plain', JSON.stringify(player));
     this.selectedPlayer = player;
     this.saveCurrentPosition(player);
@@ -108,8 +114,8 @@ export class PitchComponent implements OnInit, OnChanges {
   }
 
   onModuleChange(event: any) {
-    
     const module = event.target.value;
+    this.defaultModule = module;
     this.setPlayersForModule(module);
     this.cdr.detectChanges();
   }
@@ -223,10 +229,10 @@ export class PitchComponent implements OnInit, OnChanges {
       alert('Devi prima scegliere il modulo!');
       return;
     }
-  
+
     const playerId = event.target.value;
     const selectedPanchinaro = this.panchinaPlayers.find((p) => p.id == Number(playerId));
-  
+
     if (selectedPanchinaro) {
       const playerIndex = this.players.findIndex((p) => p.ruolo === role && !p.id);
       if (playerIndex !== -1) {

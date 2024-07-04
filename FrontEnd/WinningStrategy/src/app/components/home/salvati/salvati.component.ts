@@ -48,6 +48,6 @@ export class SalvatiComponent implements OnInit {
       }
   }
     goBack(): void {
-      this.router.navigate(['/pitch']); 
+      this.router.navigate(['/']); 
     }
 }

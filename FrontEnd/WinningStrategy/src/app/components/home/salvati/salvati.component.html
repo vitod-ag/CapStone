@@ -1,11 +1,11 @@
 <div class="container align-items-end">
-  <div class="fixed-buttons">
+  <div class="fixed-buttons bg-ligth-subtle">
     <div class="row button-row">
       <div class="col-6 d-flex justify-content-start">
         <button class="btn btn-primary" (click)="deleteSalvataggi()">Cancella Tutti i Salvataggi</button>
       </div>
       <div class="col-6 d-flex justify-content-end">
-        <button class="btn btn-primary" (click)="goBack()">Torna al Campo</button>
+        <button class="btn btn-primary" (click)="goBack()">Torna alla home</button>
       </div>
     </div>
   </div>
@@ -15,7 +15,7 @@
       <ng-container *ngFor="let savedData of savedDataList">
         <div class="d-flex flex-column align-items-start mb-5">
           <button class="btn btn-primary" (click)="deleteSalvataggio(savedData.id)">Cancella Salvataggio</button>
-          <div class="pitch-container">
+          <div class="pitch-container mt-2">
             <img src="../../../assets/img/base_lavagna.png" alt="Campo da calcio" class="pitch">
             <div class="player" *ngFor="let player of savedData.giocatoriPosizionatiList; let i = index"
                  [ngStyle]="{'top.%': (player.y + 5), 'left.%': player.x, 'background-color': savedData.colore}"
