@@ -64,6 +64,12 @@ export class PitchComponent implements OnInit, OnChanges {
         });
       }
     });
+    const body = document.querySelector('body')
+    if (body) {
+      if (body.classList.contains('sfondo')) {
+        body.classList.remove('sfondo')
+      }
+    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
