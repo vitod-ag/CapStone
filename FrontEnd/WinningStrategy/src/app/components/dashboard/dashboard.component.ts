@@ -62,4 +62,6 @@ export class DashboardComponent {
   signUp() {
       this.container.nativeElement.classList.add('right-panel-active');
   }
+
+  
 }

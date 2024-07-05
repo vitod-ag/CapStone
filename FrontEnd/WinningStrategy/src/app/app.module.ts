@@ -24,6 +24,7 @@ import { SceltaSquadraComponent } from './components/home/scelta-squadra/scelta-
 import { SalvatiComponent } from './components/home/salvati/salvati.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SwapPlayerModalComponent } from './components/home/swap-player-modal/swap-player-modal.component';
+import { ProfiloComponent } from './components/dashboard/profilo/profilo.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { SwapPlayerModalComponent } from './components/home/swap-player-modal/sw
     GoogleLoginComponent,
     SceltaSquadraComponent,
     SalvatiComponent,
-    SwapPlayerModalComponent
+    SwapPlayerModalComponent,
+    ProfiloComponent
   ],
   imports: [
     BrowserModule,

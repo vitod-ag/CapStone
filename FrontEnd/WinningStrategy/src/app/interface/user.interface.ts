@@ -6,4 +6,5 @@ export interface User {
     password: string,
     tipoUtente: string,
     username: string,
+    avatar?: string
 }

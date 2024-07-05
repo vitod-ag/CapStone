@@ -1,0 +1,61 @@
+.container {
+    min-height: 100vh;
+  }
+
+.riquadri{
+    background-color: #E5E5E5;
+}
+  
+  @media (max-width: 1559px) and (max-height: 975px) {
+    .container {
+      padding: 20px;
+    }
+    .col-12 {
+      padding: 0 10px;
+    }
+  }
+  
+  @media (max-width: 820px) and (max-height: 1180px) {
+    .container {
+      padding: 15px;
+    }
+    .col-12 {
+      padding: 0 8px;
+    }
+  }
+  
+  @media (max-width: 480px) and (max-height: 1040px) {
+    .container {
+      padding: 10px;
+    }
+    .col-12 {
+      padding: 0 5px;
+    }
+  }
+  
+  @media (max-width: 430px) and (max-height: 932px) {
+    .container {
+      padding: 5px;
+    }
+    .col-12 {
+      padding: 0 3px;
+    }
+  }
+  
+  @media (max-width: 393px) and (max-height: 852px) {
+    .container {
+      padding: 2px;
+    }
+    .col-12 {
+      padding: 0 2px;
+    }
+  }
+  
+  .clicca {
+    cursor: pointer;
+  }
+  
+  .verdescuro {
+    color: #14213D; /* Esempio di colore verde scuro */
+  }
+  
