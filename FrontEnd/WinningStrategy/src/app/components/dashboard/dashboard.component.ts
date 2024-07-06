@@ -1,7 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthData } from 'src/app/interface/auth-data.interface';
 import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
@@ -14,17 +13,14 @@ export class DashboardComponent {
   register = false;
   constructor(private authSrv: AuthService, private router: Router) {}
 
-
   ngOnInit(): void {
-    let userS: AuthData | null; 
-    this.authSrv.user$.subscribe((user) => {
-         userS = user;
-      });
-      setTimeout(() => {
-        if (userS) {
-            this.router.navigate(['/home']);
-        }
-      }, 1000)
+    //   this.authSrv.user$.subscribe((user) => {
+    //         console.log('suca')
+    //       if (user) {
+    //           this.router.navigate(['/home']);
+    //       }
+    //   });
+
       let body = document.querySelector('body')
       if (body) {
         body.classList.add('sfondo')

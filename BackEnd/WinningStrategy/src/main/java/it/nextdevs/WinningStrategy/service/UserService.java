@@ -200,6 +200,7 @@ public class UserService {
                     .header img {
                         width: 200px;
                         height: auto;
+                        border-radius: 50%;
                     }
                     .content {
                         padding: 20px;
@@ -219,7 +220,7 @@ public class UserService {
                         display: inline-block;
                         padding: 12px 25px;
                         font-size: 16px;
-                        color: #ffffff;
+                        color: #ffffff !important;
                         background-color: #007bff;
                         text-decoration: none;
                         border-radius: 5px;
@@ -264,7 +265,7 @@ public class UserService {
                         <p>Grazie per esserti registrato!</p>
                         <p>Distinti saluti,</p>
                         <p>Il Team di Supporto</p>
-                        <a href="http://www.example.com/login" class="button">Accedi</a>
+                        <a href="http://localhost:4200" class="button">Accedi</a>
                     </div>
                     <div class="social-icons">
                         <a href="https://facebook.com"><img src="cid:facebookIcon" alt="Facebook"></a>

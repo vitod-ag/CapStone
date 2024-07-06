@@ -29,6 +29,7 @@ export class AuthService {
       tap(async (user) => {
         this.authSub.next(user);
         localStorage.setItem('user', JSON.stringify(user));
+        this.router.navigate(['/home'])
         this.autoLogout(user);
       })
     )
@@ -40,6 +41,7 @@ export class AuthService {
       tap(async (user) => {
         this.authSub.next(user);
         localStorage.setItem('user', JSON.stringify(user));
+        this.router.navigate(['/home'])
         this.autoLogout(user);
       })
     )
